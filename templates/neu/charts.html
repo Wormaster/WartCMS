@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>Neu v1.0  |  Responsive Admin Skin</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="dist/css/bootstrap.css" rel="stylesheet">
+    
+        <!-- Boostrap Theme -->
+        <link href="css/skin.css" rel="stylesheet">
+        <link href="css/boostrap-overrides.css" rel="stylesheet">
+        <link href="css/theme.css" rel="stylesheet">
+            
+        <!-- Add custom CSS here -->
+        <link href="assets/css/sidebar.css" rel="stylesheet">
+        
+        <!-- Plugins -->
+        <link href="assets/css/font-awesome.css" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/ezmark.css">
+        <link href="assets/css/animate-custom.css" rel="stylesheet">
+        <link href="assets/css/pushy.css" rel="stylesheet">
+        <link href="assets/plugins/morris.js-0.4.3/morris.css" rel="stylesheet">
+        
+        <!-- Bootstrap core JavaScript -->
+        <script src="assets/js/jquery.js"></script>
+        <script src="dist/js/bootstrap.js"></script>
+        
+        
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+        <script src="assets/js/html5shiv.js"></script>
+        <script src="assets/js/respond.min.js"></script>
+        <![endif]-->
+	
+  
+ </head>
+ <body>
+     <!-- Slide out chat panel -->
+    <nav class="pushy pushy-right">
+        <div class="well-lg no-radius">
+            <i class="icon-group"></i>&nbsp;&nbsp;&nbsp;<strong>Chat</strong>&nbsp;&nbsp;<span class="text-transparent">(4)</span>
+            <a href="javascript:;" class="close-chat-panel" data-dismiss="panel" aria-hidden="true"><i class="icon-remove pull-right text-transparent"></i></a>
+			<br><br><div class="input-group inverse input-group-sm no-padding">
+                      <span class="input-group-addon"><i class="icon-search text-transparent"></i></span>
+                      <input type="text" class="form-control" placeholder="Search">
+            </div>
+           <div class="clearfix"></div>
+        </div>
+        <ul class="chat align-center-vert-alt">
+            <li>
+            	<a href="#"><img src="img/tn_user_07.jpg" alt="User" class="img-circle user-thumbnail-xs"></a>
+            	<small><a href="#"> Amin Bhatnagar<span class="text-online pull-right"><i class="icon-circle text-online "></i></span></a></small>
+                <div class="clearfix"></div>
+            </li>
+            <li>
+            	<a href="#" class="pull-left"><img src="img/tn_user_02.jpg" alt="User" class="img-circle user-thumbnail-xs"></a>
+            	<small><a href="#">Gina Wheeling<span class="text-online pull-right"><i class="icon-circle text-online "></i></span></a></small>
+                <div class="clearfix"></div>
+            </li>
+            <li>
+            	<a href="#" class="pull-left"><img src="img/tn_user_03.jpg" alt="User" class="img-circle user-thumbnail-xs"></a>
+            	<small><a href="#">Ryan Smith<span class="text-online pull-right"><i class="icon-circle text-online "></i></span></a></small>
+                <div class="clearfix"></div>
+            </li>
+            <li>
+            	<a href="#" class="pull-left"><img src="img/tn_user_04.jpg" alt="User" class="img-circle user-thumbnail-xs"></a>
+            	<small><a href="#">Hai Thatcher<span class="text-online pull-right"><i class="icon-circle text-online "></i></span></a></small>
+                <div class="clearfix"></div>
+            </li>
+            <li>
+            	<a href="#" class="pull-left"><img src="img/tn_user_05.jpg" alt="User" class="img-circle user-thumbnail-xs"></a>
+            	<small><a href="#">Jane Doe<span class="text-online pull-right"><i class="icon-circle text-danger"></i></span></a></small>
+                <div class="clearfix"></div>
+            </li>
+           <li>
+            	<a href="#" class="pull-left"><img src="img/tn_user_06.jpg" alt="User" class="img-circle user-thumbnail-xs"></a>
+            	<small><a href="#">Carson Winters<span class="text-online pull-right"><i class="icon-circle text-danger "></i></span></a></small>
+                <div class="clearfix"></div>
+            </li>
+            <li class="idle">
+            	<a href="#" class="pull-left"><img src="img/tn_user_01.jpg" alt="User" class="img-circle user-thumbnail-xs"></a>
+            	<small><a href="#">Peyton Max <span class="pull-right"><i class="icon-circle"></i></span></a></small>
+                <div class="clearfix"></div>
+            </li>
+            <li class="idle">
+            	<a href="#" class="pull-left"><img src="img/tn_user_05.jpg" alt="User" class="img-circle user-thumbnail-xs"></a>
+            	<small><a href="#">Brianna Winters<span class="pull-right"><i class="icon-circle"></i></span></a></small>
+                <div class="clearfix"></div>
+            </li>
+            <li class="idle">
+            	<a href="#" class="pull-left"><img src="img/tn_user_03.jpg" alt="User" class="img-circle user-thumbnail-xs"></a>
+            	<small><a href="#">Micheal Anderson<span class="pull-right"><i class="icon-circle"></i></span></a></small>
+                <div class="clearfix"></div>
+            </li>
+        </ul>
+    </nav>
+
+  <!-- Container for chat panel push-->
+  <div id="container"> 
+   <!-- Top Navbar  -->
+        <div class="navbar navbar-static-top navbar-default " role="navigation">
+            <div class="navbar-header navbar-inverse text-center">
+                <button type="button" class="navbar-toggle border-left-med no-radius" id="menu-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                </button>
+                <button type="button" class="navbar-toggle border-left-med no-radius" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="avatar"><img src="img/avatar.jpg" alt="Ryan" class="img-circle"></span>
+                </button>
+                <!-- logo -->
+                <div class="navbar-brand"><a href="index.html"> <img src="img/logo.png" alt="logo"></a></div>
+                <!-- / logo -->
+            </div>
+            <!-- user -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav navbar-right navbar-user">
+                    <!-- new messages -->
+                    <li class="dropdown messages-dropdown">
+                        <a href="#" class="dropdown-toggle announcements" data-toggle="dropdown"><i class="icon-envelope-alt"></i><span class="badge">23</span></a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-header header-inverse"><i class="icon-envelope"></i>23 New Messages</li>
+                            <li class="message-preview">
+                                    <a href="#">
+                                    <img src="img/tn_user_02.jpg" alt="User" class="img-circle user-thumbnail-xs">
+                                    <span class="name pull-left">Maya Smith</span>
+                                    <span class="label label-primary pull-right">Just Now</span><br>
+                                    <span class="message text-transparent">Hi Ryan, I received a message from quis...</span>
+                                    </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li class="message-preview">
+                                <a href="#">
+                                <img src="img/tn_user_01.jpg" alt="User" class="img-circle user-thumbnail-xs">
+                                <span class="name pull-left">James Doe</span>
+                                <span class="time pull-right text-transparent"><i class="icon-time"></i> 4:34 PM</span><br>
+                                <span class="message text-transparent">Good Afternoon Ryan, Were you able to...</span>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li class="message-preview">
+                                <a href="#">
+                                <img src="img/tn_user_04.jpg" alt="User" class="img-circle user-thumbnail-xs">
+                                <span class="name pull-left">Benjamin Taylor</span>
+                                <span class="time pull-right text-transparent"><i class="icon-time"></i> 1:56 PM</span><br>
+                                <span class="message text-transparent">Hey, Can you give me a call when you get a...</span>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li class="dropdown-footer text-center">
+                                <a href="#">
+                                See all new messages
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- alerts -->
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle announcements" data-toggle="dropdown">
+                        <i class="icon-flag-alt"></i><span class="badge animated-delay flash">12</span></a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-header header-inverse"><i class="icon-star"></i>12 Notifications </li>
+                            <li class="notification">
+                                <a href="#">
+                                <span class="pull-left"><span class="label label-success"><i class="icon-comment"></i></span>  New Comment</span>
+                                <span class="time pull-right text-transparent">Just Now</span><br>
+                                </a>
+                            </li>
+                            <li class="notification">
+                                <a href="#">
+                                <span class="pull-left"><span class="label label-success"><i class="icon-comment"></i></span>  New Comment</span>
+                                <span class="time pull-right text-transparent">5 Minutes Ago</span><br>
+                                </a>
+                            </li>
+                            <li class="notification">
+                                <a href="#">
+                                <span class="pull-left"><span class="label label-primary"><i class="icon-user"></i></span>  12 New Users</span>
+                                <span class="time pull-right text-transparent">23 Minutes ago</span><br>
+                                </a>
+                            </li>
+                            <li class="notification">
+                                <a href="#">
+                                <span class="pull-left"><span class="label label-danger"><i class="icon-flag"></i></span>  Canceled Transaction</span>
+                                <span class="time pull-right text-transparent">12 Hours Ago</span><br>
+                                </a>
+                            </li>
+                            <li class="notification">
+                                <a href="#">
+                                <span class="pull-left"><span class="label label-warning"><i class="icon-shopping-cart"></i></span>  Canceled Transaction</span>
+                                <span class="time pull-right text-transparent">Yesterday</span><br>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li class="dropdown-footer text-center">
+                                <a href="#">
+                                See all notifications
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown alerts-dropdown">
+                        <a href="#" class="dropdown-toggle announcements" data-toggle="dropdown"><i class="icon-bar-chart"></i><span class="badge">56</span></a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-header header-inverse"><i class="icon-bar-chart"></i>6 Pending Tasks </li>
+                            <li>
+                                <a href="javascript:void(0);">
+                                    <span class="task">
+                                    <span class="desc">November orders </span>
+                                    </span>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);">
+                                    <span class="task">
+                                    <span class="desc">Invoices paid</span>
+                                    </span>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-success"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width:65%">
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);">
+                                    <span class="task">
+                                    <span class="desc">Updates</span>
+                                    </span>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-warning"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width:35%">
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);">
+                                    <span class="task">
+                                    <span class="desc">Unread emails</span>
+                                    </span>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-danger"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width:15%">
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li class="dropdown-footer text-center">
+                                <a href="#">
+                                See all tasks
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                    	<a href="#"><div class="menu-btn"><i class="icon-comment-alt"></i><span class="badge">2</span></div></a>
+                      
+                    </li>
+                    <li class="avatar dropdown user-dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="img/avatar.jpg" alt="Ryan" class="img-circle nav-avatar">Welcome Ryan!<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="user-profile.html"><i class="icon-user"></i> Profile</a></li>
+                            <li><a href="email.html"><i class="icon-envelope"></i> Inbox</a></li>
+                            <li><a href="#"><i class="icon-gear"></i> Settings</a></li>
+                            <li class="divider"></li>
+                            <li><a href="login.html"><i class="icon-power-off"></i> Log Out</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- / nav-collapse -->
+        </div>
+        <!-- / top Navbar -->
+        
+		<!-- Wrapper for content below nav bar -->
+        <div id="wrapper">
+         <!-- Sidebar -->
+          <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+              <li>
+                <a href="index.html">
+                <span class="nav-icon"><i class="icon-dashboard icon-2x"></i></span>
+                <span class="sidebar-menu-item-text">Dashboard</span></a>            
+              </li>
+              <li>
+                 <a href="email.html">
+                 <span class="nav-icon"><i class="icon-envelope-alt icon-2x"></i></span>
+                 <span class="sidebar-menu-item-text">Email</span> <span class="responsive-hide badge">103</span>
+                 </a>
+              </li>
+              <li class="nav-header"> 
+                  <a href="#" data-toggle="collapse" data-target="#layouts">
+                      <span class="nav-icon"><i class="icon-folder-open icon-2x"></i></span>
+                      <span class="sidebar-menu-item-text">Layouts</span>
+                      <i class="icon-chevron-down pull-right"></i>
+                  </a>
+                  <ul class="nav nav-list collapse submenu" id="layouts">
+						<li><a href="boxedlayout.html">Boxed Layout</a></li>
+                        <li><a href="horizontal-nav.html">Horizontal Menu</a></li>
+                        <li><a href="skin-opt-1.html">Sample Skin</a></li>
+                    </ul>
+        	  </li>
+              <li class="nav-header"  data-toggle="collapse" data-target="#uiMenu"> 
+                  <a href="#">
+                      <span class="nav-icon"><i class="icon-tablet icon-2x"></i></span>
+                      <span class="sidebar-menu-item-text">UI Set</span>
+                      <i class="icon-chevron-down pull-right"></i>
+                  </a>
+                  <ul class="nav nav-list collapse submenu" id="uiMenu">
+                        <li><a href="buttons.html">Buttons</a></li>
+                        <li><a href="typography.html">Typography</a></li>
+                        <li><a href="modals.html">Modals</a></li>
+                        <li><a href="panels.html">Panels</a></li>
+                        <li><a href="tabs.html">Tabs & Accordians</a></li>
+                        <li><a href="sliders.html">Sliders</a></li>
+                        <li><a href="notifications.html">Notifications</a></li>
+                    </ul>
+        	  </li>
+        	  <li class="nav-header"  data-toggle="collapse" data-target="#pages"> 
+                  <a href="#">
+                      <span class="nav-icon"><i class="icon-copy icon-2x"></i></span>
+                      <span class="sidebar-menu-item-text">Pages</span>
+                      <i class="icon-chevron-down pull-right"></i>
+                  </a>
+                  <ul class="nav nav-list collapse submenu" id="pages">
+                         <li><a href="user-profile.html">User Profile</a></li>
+                         <li><a href="login.html">Login</a></li>
+                         <li><a href="register.html">Register</a></li>
+                         <li><a href="404.html">404 Page</a></li><li><a href="500.html">500 Page</a></li>
+                         <li><a href="lock.html">Lock Screen</a></li>
+                         <li><a href="message.html">Send Message</a></li>
+                         <li><a href="fileupload.html">File Upload</a></li>
+                         <li><a href="timeline.html">Timeline</a></li>
+                    </ul>
+        	  </li>
+        	  <li class="nav-header"  data-toggle="collapse" data-target="#tables"> 
+                  <a href="#">
+                      <span class="nav-icon"><i class="icon-table icon-2x"></i></span>
+                      <span class="sidebar-menu-item-text">Tables</span>
+                      <i class="icon-chevron-down pull-right"></i>
+                  </a>
+                  <ul class="nav nav-list collapse submenu" id="tables">
+						<li><a href="basic.html">Basic</a></li>
+                        <li><a href="data.html">Data</a></li>
+                    </ul>
+        	  </li>
+              <li>
+                <a href="charts.html" class="active-title">
+                <span class="nav-icon"><i class="icon-bar-chart icon-2x"></i></span>
+                <span class="sidebar-menu-item-text">Charts</span></a>            
+              </li>
+              <li>
+                <a href="maps.html">
+                <span class="nav-icon"><i class="icon-map-marker icon-2x"></i></span>
+                <span class="sidebar-menu-item-text">Map</span></a>            
+              </li>
+              <li>
+                <a href="calendar.html">
+                <span class="nav-icon"><i class="icon-calendar icon-2x"></i></span>
+                <span class="sidebar-menu-item-text">Calendar</span></a>            
+              </li>
+              <li>
+                <a href="project-manager.html">
+                <span class="nav-icon"><i class="icon-edit icon-2x"></i></span>
+                <span class="sidebar-menu-item-text">Project Manager</span></a>            
+              </li>
+            </ul>
+          </div><!-- /sidebar -->
+          
+          <!-- preloader -->
+          <div class='preloader-wrapper'>
+           <div class="preloader">
+               <img src="img/preloader.png" alt='loading image'/>
+           </div>
+		  </div><!-- / preloader -->  
+          
+ 		 <!-- Keep all page content within the page-content-wrapper -->
+          <div id="page-content-wrapper" class="animated-med-delay fadeInRight">
+                    <!-- main content header -->
+                    <div class="row add-padding">
+                            <div class="pull-left">
+                                <h1>Charts & Graphs</h1>
+                                <ol class="breadcrumb">
+                                    <li><a href="#"><i class="icon-home"></i> Home</a></li>
+                                    <li><a href="#">UI Set</a></li>
+                                    <li class="active"><a href="#">Charts & Graphs</a></li>
+                            	</ol>
+                            </div>
+                    </div><!-- / main content header -->
+                    <!--Main Content-->
+                    <!-- Row 1 -->
+                    <div class="row">
+                                  <div class="col-sm-8">
+                                        <div class="panel">
+                                            <div class="panel-heading">
+                                                <div class="pull-left"><h4><i class="icon-random"></i> Morris Area Chart </h4></div>
+                                                <div class="tools pull-right">
+                                                    <a href="#"><i class="icon-refresh text-transparent"></i></a>
+                                                    <a href="javascript:;" class="close-panel" data-dismiss="panel" aria-hidden="true"><i class="icon-remove text-transparent"></i></a>
+                                                 </div>
+                                                 <div class="clearfix"></div>
+                                            </div>
+                                            <div class="panel-body brand-primary-bg">
+                                                <!-- graph -->
+                                    			<div id="area-example" style="height:200px;" class="no-padding"></div><!-- /graph -->
+                                                
+                                            </div>
+                                            <div class="panel-footer brand-primary-bg">
+                                            	<a href="#"><small>VIEW ALL</small></a> 
+                                    			<a href="#"><div class="pull-right"><i class="icon-circle-arrow-right"></i></div></a> 
+                                            </div>
+                                        </div> 
+                       			 </div>
+                                 <div class="col-sm-4">
+                                 	<div class="panel">
+                                            <div class="panel-heading">
+                                                <div class="pull-left"><h4><i class="icon-circle-blank"></i> Morris Donut Chart </h4></div>
+                                                <div class="tools pull-right">
+                                                    <a href="#"><i class="icon-refresh text-transparent"></i></a>
+                                                    <a href="javascript:;" class="close-panel" data-dismiss="panel" aria-hidden="true"><i class="icon-remove text-transparent"></i></a>
+                                                 </div>
+                                                 <div class="clearfix"></div>
+                                            </div>
+                                            <div class="panel-body no-padding">
+                                                <!--donut--> 
+                                                <br>
+                                                <div id="donut-example" style="height:222px;"></div>
+                                                <!-- / donut -->
+                                            </div>
+                                            <div class="panel-footer">
+                                            	<a href="#"><small>VIEW ALL</small></a> 
+                                    			<a href="#"><div class="pull-right"><i class="icon-circle-arrow-right"></i></div></a> 
+                                            </div>
+                                        </div> 
+                       			 </div>
+                   	 </div> <!-- / row 1 -->
+                     
+                     <!-- Row 2 -->
+                     <div class="row">
+                                  <!-- Sparkline -->
+                                  <div class="col-sm-4">
+                                        <div class="panel">
+                                            <div class="panel-heading">
+                                                <div class="pull-left"><h4><i class="icon-align-left"></i> Sparkline Charts </h4></div>
+                                                <div class="tools pull-right">
+                                                    <a href="#"><i class="icon-refresh text-transparent"></i></a>
+                                                    <a href="javascript:;" class="close-panel" data-dismiss="panel" aria-hidden="true"><i class="icon-remove text-transparent"></i></a>
+                                                 </div>
+                                                 <div class="clearfix"></div>
+                                            </div>
+                                            <div class="panel-body no-padding">
+                                                <!--chart options--> 
+                                                <table id="charts" class="table table-responsive table-hover">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td><span id="bar-ex">4,3,5,4,5,6</span></td>
+                                                            <td>Bar Graph</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><span id="line-ex">4,3,5,4,5,6</span></td>
+                                                            <td>Composite inline</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><span id="bullet-ex">4,3,5,4,5,6</span></td>
+                                                            <td>Bullet Chart</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><span id="compositebar-ex">4,3,5,4,5,6</span></td>
+                                                            <td>Composite bar</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                           		 <span id="pie-ex1">4,3,5,4,5,6</span>&nbsp;&nbsp;
+                                                            	 <span id="pie-ex2">4,3,5,4,5,6</span>&nbsp;&nbsp;
+                                                                 <span id="pie-ex3">4,3,5,4,5,6</span>&nbsp;&nbsp;
+                                                                 <span id="pie-ex4">4,3,5,4,5,6</span>&nbsp;&nbsp;
+                                                                 <span id="pie-ex5">4,3,5,4,5,6</span>&nbsp;&nbsp;
+                                                            </td>
+                                                            <td>Pie charts</td>
+                                                        </tr>
+                                  					    <tr>
+                                                            <td><span id="discrete-ex">4,3,5,4,5,6</span></td>
+                                                            <td>Discrete Chart</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                <!-- / chart options -->
+                                            </div>
+                                            <div class="panel-footer">
+                                            	<a href="#"><small>VIEW ALL</small></a> 
+                                    			<a href="#"><div class="pull-right"><i class="icon-circle-arrow-right"></i></div></a> 
+                                            </div>
+                                        </div> 
+                       			 </div><!-- / sparkline -->
+                                 
+                                 <!--  large sparkline charts -->
+                                 <div class="col-sm-8">
+                                        <div class="panel">
+                                            <div class="panel-heading">
+                                                <div class="pull-left"><h4><i class="icon-align-left"></i> Large Sparkline Chart </h4></div>
+                                                <div class="tools pull-right">
+                                                    <a href="#"><i class="icon-refresh text-transparent"></i></a>
+                                                    <a href="javascript:;" class="close-panel" data-dismiss="panel" aria-hidden="true"><i class="icon-remove text-transparent"></i></a>
+                                                 </div>
+                                                 <div class="clearfix"></div>
+                                            </div>
+                                            <div class="panel-body text-center gray-dark-bg">
+                                            	<br><br>
+                                                <!-- sparkline -->
+                                                <span id="bar-ex2">4,3,5,4,5,6</span><!-- / sparkline -->
+                                            </div>
+                                            <div class="panel-footer gray-dark-bg">
+                                           	    <a href="#"><small>VIEW ALL</small></a> 
+                                    			<a href="#"><div class="pull-right"><i class="icon-circle-arrow-right"></i></div></a>
+                                            </div>
+                                       </div>
+                                  </div><!-- /large sparkline charts -->
+                                            
+                   	 </div> <!-- / row 2 -->
+              		 <!-- Row 3 -->
+                     <div class="row">
+                                  <!-- Sparkline -->
+                                  <div class="col-sm-4">
+                                        <div class="panel">
+                                            <div class="panel-heading">
+                                                <div class="pull-left"><h4><i class="icon-ok-sign"></i> Flot Pie Chart </h4></div>
+                                                <div class="tools pull-right">
+                                                    <a href="#"><i class="icon-refresh text-transparent"></i></a>
+                                                    <a href="javascript:;" class="close-panel" data-dismiss="panel" aria-hidden="true"><i class="icon-remove text-transparent"></i></a>
+                                                 </div>
+                                                 <div class="clearfix"></div>
+                                            </div>
+                                            <div class="panel-body no-padding">
+                                            <!-- pie chart  -->
+                                                    <div class="demo-container">
+                                                        <div id="pieplaceholder" class="demo-placeholder"></div>
+                                                    </div><!-- / pie chart  -->
+                                            </div>
+                                            <div class="panel-footer">
+                                            	<a href="#"><small>VIEW ALL</small></a> 
+                                    			<a href="#"><div class="pull-right"><i class="icon-circle-arrow-right"></i></div></a> 
+                                            </div>
+                                       </div>
+                                  </div>
+                                   <!-- Flot Realtime  -->
+                                   <div class="col-sm-4">
+                                        <div class="panel">
+                                            <div class="panel-heading">
+                                                <div class="pull-left"><h4><i class="icon-sitemap"></i> Flot Realtime </h4></div>
+                                                <div class="tools pull-right">
+                                                    <a href="#"><i class="icon-refresh text-transparent"></i></a>
+                                                    <a href="javascript:;" class="close-panel" data-dismiss="panel" aria-hidden="true"><i class="icon-remove text-transparent"></i></a>
+                                                 </div>
+                                                 <div class="clearfix"></div>
+                                            </div>
+                                            <div class="panel-body no-padding">
+                                            <!-- realtime chart  -->
+                                            	<div id="content">
+                                                    <div class="demo-container">
+                                                        <div id="placeholder" class="demo-placeholder"></div>
+                                                    </div>
+                                            	</div><!-- / realtime chart  -->
+                                            
+                                            </div>
+                                            <div class="panel-footer">
+                                            	<a href="#"><small>VIEW ALL</small></a> 
+                                    			<a href="#"><div class="pull-right"><i class="icon-circle-arrow-right"></i></div></a> 
+                                            </div>
+                                       </div>
+                                  </div>
+                                   <!-- Sparkline -->
+                                  <div class="col-sm-4">
+                                        <div class="panel">
+                                            <div class="panel-heading">
+                                                <div class="pull-left"><h4><i class="icon-signal"></i> Flot Stacked Bar Graph </h4></div>
+                                                <div class="tools pull-right">
+                                                    <a href="#"><i class="icon-refresh text-transparent"></i></a>
+                                                    <a href="javascript:;" class="close-panel" data-dismiss="panel" aria-hidden="true"><i class="icon-remove text-transparent"></i></a>
+                                                 </div>
+                                                 <div class="clearfix"></div>
+                                            </div>
+                                            <div class="panel-body no-padding">
+                                            <!-- bar chart  -->
+                                                    <div class="demo-container">
+                                                        <div id="barplaceholder" class="demo-placeholder"></div>
+                                                    </div><!-- / bar chart  -->
+                                            </div>
+                                            <div class="panel-footer">
+                                           		<a href="#"><small>VIEW ALL</small></a> 
+                                    			<a href="#"><div class="pull-right"><i class="icon-circle-arrow-right"></i></div></a> 
+                                            </div>
+                                       </div>
+                                  </div>
+                                   
+                     </div><!-- / row 3 -->
+
+            	</div><!--/ page Content Wrapper-->
+            </div><!-- / Wrapper for content below nav bar -->
+       </div> <!--/ push wrapper-->
+
+        
+        <!-- Plugins & Custom -->
+        <!-- Placed at the end of the document so the pages load faster -->
+               <!-- Preloader -->
+	   <script>
+            $(window).load(function(){
+             $('.preloader-wrapper').fadeOut();
+            });
+        </script>
+		<script src="assets/js/modernizr-2.6.2.min.js"></script>
+        <script type="text/javascript" src="assets/js/jquery-ui-1.10.4.custom.min.js"></script>
+        
+        <!-- Sparkline -->
+		<script src="assets/js/jquery.sparkline.js"></script>
+	
+        <!-- Flot -->
+        <script language="javascript" type="text/javascript" src="assets/plugins/flot/jquery.flot.js"></script>
+	    <script language="javascript" type="text/javascript" src="assets/plugins/flot/jquery.flot.pie.js"></script>
+        <script language="javascript" type="text/javascript" src="assets/plugins/flot/jquery.flot.resize.js"></script>
+       	<script type="text/javascript">
+			$(window).load(function(){
+				var data = [
+					{label: '2013', color:'#ec9a5d', data: [[2,300], [2,300], [3,300], [4,300], [5,300]]},
+					{label: '2012', color:'#687081', data: [[1,800], [2,600], [3,400], [4,200], [5,0]]},
+					{label: '2011', color:'#00b49d', data: [[1,100], [2,200], [3,300], [4,400], [5,500]]},
+				];
+			
+			$.plot($("#barplaceholder"), data, {
+				grid: {
+                        borderWidth:0,
+				},
+				series: {
+					stack: 1,
+					bars: {
+						show: true,
+						barWidth: 0.6,
+						fill:1
+					}
+				}
+			});
+			});//]]>  
+			</script>
+			<script type='text/javascript'>//<![CDATA[ 
+                $(window).load(function(){
+					datapie = [
+						{label: "One",  data: 50, color: '#00b49d'},
+						{label: "Two",  data: 65, color: '#ec9a5d'},
+						{label: "Three",  data: 23, color: '#687081'}
+					];
+					
+					$.plot($("#pieplaceholder"), datapie, { 
+						series: {
+							 pie: {
+								 show: true,
+								 label: {
+									 show: true,
+									 formatter: function(label,point){
+										 return(point.percent.toFixed(2) + '%');
+										 
+									 }
+								 }
+							}
+						},        
+						legend: {show: true}
+					});
+					
+                
+                });//]]>  
+                
+                </script>
+               <script type="text/javascript">
+                $(function() {
+            
+                    // We use an inline data source in the example, usually data would
+                    // be fetched from a server
+            
+                    var data = [],
+                        totalPoints = 300;
+            
+                    function getRandomData() {
+            
+                        if (data.length > 0)
+                            data = data.slice(1);
+            
+                        // Do a random walk
+            
+                        while (data.length < totalPoints) {
+            
+                            var prev = data.length > 0 ? data[data.length - 1] : 50,
+                                y = prev + Math.random() * 10 - 5;
+            
+                            if (y < 0) {
+                                y = 0;
+                            } else if (y > 100) {
+                                y = 100;
+                            }
+            
+                            data.push(y);
+                        }
+            
+                        // Zip the generated y values with the x values
+            
+                        var res = [];
+                        for (var i = 0; i < data.length; ++i) {
+                            res.push([i, data[i]])
+                        }
+            
+                        return res;
+                    }
+            
+                    // Set up the control widget
+            
+                    var updateInterval = 30;
+                    $("#updateInterval").val(updateInterval).change(function () {
+                        var v = $(this).val();
+                        if (v && !isNaN(+v)) {
+                            updateInterval = +v;
+                            if (updateInterval < 1) {
+                                updateInterval = 1;
+                            } else if (updateInterval > 2000) {
+                                updateInterval = 2000;
+                            }
+                            $(this).val("" + updateInterval);
+                        }
+                    });
+            
+                    var plot = $.plot("#placeholder", [ getRandomData() ], {
+                        grid: {
+                        borderWidth:0,
+                        markings: function(axes) {
+                            var markings = [];
+                            var xaxis = axes.xaxis;
+                            for (var x = Math.floor(xaxis.min); x < xaxis.max; x += xaxis.tickSize * 2) {
+                                markings.push({ xaxis: { from: x, to: x + xaxis.tickSize }, color: "rgba(232, 232, 255, 0.2)" });
+                            }
+                            return markings;
+                        }
+                    },
+                    series: {
+                            shadowSize: 0	// Drawing is faster without shadows
+                        },
+                        
+                        yaxis: {
+                            min: 0,
+                            max: 100
+                        },
+                        xaxis: {
+                            show: false
+                        }
+                    });
+            
+                    function update() {
+            
+                        plot.setData([getRandomData()]);
+            
+                        // Since the axes don't change, we don't need to call plot.setupGrid()
+            
+                        plot.draw();
+                        setTimeout(update, updateInterval);
+                    }
+            
+                    update();
+            
+                });
+            
+		</script>
+        
+        <!-- Custom -->
+		<script src="assets/js/script.js"></script>   
+		<script src="assets/js/sidebar-navbar.js"></script>
+	   
+        <!-- Pushy JS --> 
+        <script src="assets/js/pushy.js"></script>
+
+		<!-- Morris Chart -->
+        <script src="assets/plugins/morris.js-0.4.3/morris.js"></script>
+        <script src="assets/js/rap2AC.js"></script>
+        <script src="assets/plugins/morris.js-0.4.3/examples/lib/example.js"></script>
+        
+        <!-- Chart Sample Data -->
+        <script src="assets/js/chart-data.js"></script>
+		<script>
+            Morris.Area({
+			  element: 'area-example',
+			  data: [
+				{ y: '2006', a: 100, b: 90 },
+				{ y: '2007', a: 75,  b: 65 },
+				{ y: '2008', a: 50,  b: 40 },
+				{ y: '2009', a: 75,  b: 65 },
+				{ y: '2010', a: 50,  b: 40 },
+				{ y: '2011', a: 75,  b: 65 },
+				{ y: '2012', a: 100, b: 90 }
+			  ],
+			  xkey: 'y',
+			  ykeys: ['a', 'b'],
+			  labels: ['Value'],
+			  lineColors: ['#027062', '#79fae9', '#4da74d', '#afd8f8', '#edc240', '#cb4b4b', '#9440ed'], 
+			});
+			
+			Morris.Donut({
+			  element: 'donut-example',
+			  data: [
+				{label: "Yearly Sales", value: 12},
+				{label: "Monthly Sales", value: 12},
+				{label: "Weekly Sales", value: 10}
+			  ],
+			  colors: ['#5f2645', '#893562', '#ac5b86', '#95BBD7', '#B0CCE1', '#095791', '#095085', '#083E67', '#052C48', '#042135'] 
+			  
+			});
+
+        </script>
+
+        
+		
+
+        
+    </body>
+</html>

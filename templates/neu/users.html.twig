@@ -1,0 +1,105 @@
+{% extends 'base.html.twig' %}
+{% block leftmenu %}
+    {{ parent() }}
+
+    {% for type in alltypes %}
+        <li>
+            <a href="/{{ lang }}/admin/unimanager?ctype={{ type.id }}">
+                <span class="nav-icon"><i class="icon-puzzle-piece icon-2x"></i></span>
+                <span class="sidebar-menu-item-text">{{ type.name }}</span>
+            </a>
+        </li>
+    {% endfor %}
+
+
+{% endblock %}
+{% block crumbs %}
+    <!-- page content header -->
+    <div class="row add-padding">
+        <div class="pull-left">
+            <h1>Управление Пользователями</h1>
+            <ol class="breadcrumb">
+                <li><a href="/admin" class="text-transparent"><i class="icon-home"></i> Главная</a></li>
+                <li class="active"><a href="/admin/{{ controller }}">Управление Пользователями</a></li>
+            </ol>
+        </div>
+    </div><!-- / page content header -->
+{% endblock %}
+
+{% block content %}
+    <!--Content-->
+    <!-- Row 2 -->
+    <div class="row col-lg-12">
+        <div class="panel panel-white-solid">
+            <div class="panel-heading">
+                <div class="pull-left"><h4><i class="icon-table"></i>  Категории </h4></div>
+                <div class="tools pull-right">
+                    <a href="#"><i class="icon-refresh text-transparent"></i></a>
+                    <a href="javascript:;" class="close-panel" data-dismiss="panel" aria-hidden="true"><i class="icon-remove text-transparent"></i></a>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="panel-body">
+                <div class="col-md-6">
+                    <p>
+                        <a class="btn btn-primary btn-lg fileinput-button" href="/{{ lang }}/admin/{{ controller }}/new">Добавить нового пользователя</a>
+                    </p>
+                </div>
+            </div>
+            <div class="panel-body">
+                <!--table-->
+                <div class="table-responsive">
+                    <table id="tasks" class="table table-hover table-striped table-content">
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Логин</th>
+                            <th>Имя</th>
+                            <th>Уровень</th>
+                            <th>Действия</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for item in items %}
+                            <tr>
+                                <td><span class="label label-inverse label-md">{{ item.id }}</span></td>
+                                <td>{{ item.name }}</td>
+
+                                <td>
+                                    {{ item.hfname }}
+                                </td>
+                                <td>
+                                  {{ item.level }}
+                                </td>
+                                <td>
+                                    <a class="btn btn-default" href="/{{ lang }}/admin/{{ controller }}/edit?id={{ item.id }}"><i class="icon-pencil"></i></a>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                            Действия <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><a href="/{{ lang }}/admin/{{ controller }}/edit?id={{ item.id }}">Редактировать</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="/{{ lang }}/admin/{{ controller }}/delete?id={{ item.id }}">Удалить</a></li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                        {% else %}
+                            <p>В данном сайте не созданно ни одной категории.</p>
+                        {% endfor %}
+
+
+                        </tbody>
+                    </table>
+                </div>
+                <!-- / table -->
+            </div>
+            <div class="panel-footer">
+                <a href="#"><small>VIEW ALL</small></a>
+                <a href="#"><div class="pull-right"><i class="icon-circle-arrow-right"></i></div></a>
+            </div>
+        </div>
+    </div><!-- / row 2 -->
+{% endblock %}
+

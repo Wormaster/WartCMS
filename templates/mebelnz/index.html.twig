@@ -1,0 +1,77 @@
+{% extends 'base.html.twig' %}
+    {% block title %}
+        <title>{{ articles.0.seotitle }} - {{ sitename }}</title>
+    {% endblock %}
+        {% block headimage %}
+        <div class="slider right">
+            <div class="sliderContent">
+                {% for image in slider %}
+                    <div class="item">
+                        <img src="/images/{{ image.imagefolder }}/{{ image.slideimage.0.image }}" alt="{{ image.name }}">
+                        <a href="{{ image.slogan_link }}" class="slide_link">{{ image.slogan }}</a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endblock %}
+       
+        {% block crumbs %}
+        <div class="block steps">
+            <div class="step arrow left">
+                <img src="/templates/{{ templatefolder }}/images/step1_icon.png" alt="">
+                <p class="name">Звонок и<br> консультация</p>
+            </div>
+            <div class="step arrow left">
+                <img src="/templates/{{ templatefolder }}/images/step2_icon.png" alt="">
+                <p class="name">Выезд<br> замерщика</p>
+            </div>
+            <div class="step arrow left">
+                <img src="/templates/{{ templatefolder }}/images/step3_icon.png" alt="">
+                <p class="name">Производство<br> мебели</p>
+            </div>
+            <div class="step left">
+                <img src="/templates/{{ templatefolder }}/images/step4_icon.png" alt="">
+                <p class="name">Доставка и<br> монтаж</p>
+            </div>
+            <div class="clear"></div>
+        </div>
+            <div class="block advantages">
+                <div class="block_title">Почему заказывают у нас?</div>
+
+                <div class="items">
+                    <div class="advantage left">
+                        <div class="icon left"><img src="/templates/{{ templatefolder }}/images/advantages_icon1.png" alt=""></div>
+                        <div class="name">Кратчайшие<br> сроки</div>
+                    </div>
+                    <div class="advantage left">
+                        <div class="icon left"><img src="/templates/{{ templatefolder }}/images/advantages_icon2.png" alt=""></div>
+                        <div class="name">Более 20 цветовых<br> решений</div>
+                    </div>
+                    <div class="advantage left">
+                        <div class="icon left"><img src="/templates/{{ templatefolder }}/images/advantages_icon3.png" alt=""></div>
+                        <div class="name">Отличный<br> сервис</div>
+                    </div>
+                    <div class="advantage left">
+                        <div class="icon left"><img src="/templates/{{ templatefolder }}/images/advantages_icon4.png" alt=""></div>
+                        <div class="name">Индивидуальные<br> размеры</div>
+                    </div>
+                    <div class="advantage left">
+                        <div class="icon left"><img src="/templates/{{ templatefolder }}/images/advantages_icon5.png" alt=""></div>
+                        <div class="name">Доступные<br> цены</div>
+                    </div>
+                    <div class="advantage left">
+                        <div class="icon left"><img src="/templates/{{ templatefolder }}/images/advantages_icon6.png" alt=""></div>
+                        <div class="name">Материал ЛДСП</div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        {% endblock %}
+        {% block content %}
+        <div class="text_block">
+            {% for article in articles %}
+                <h1>{{ article.name }}</h1>
+                <div class="article_body">{{ article.article | raw }}</div>
+            {% endfor %}
+         </div>
+        {% endblock %}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="W-ArtStudio">
+        <title>{{ sitename }} - Управление сайтом</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="/templates/{{templatefolder}}/dist/css/bootstrap.css" rel="stylesheet">
+
+        <!-- Boostrap Theme -->
+        <link href="/templates/{{templatefolder}}/css/skin.css" rel="stylesheet">
+        <link href="/templates/{{templatefolder}}/css/boostrap-overrides.css" rel="stylesheet">
+        <link href="/templates/{{templatefolder}}/css/theme.css" rel="stylesheet">
+
+        <!-- Ez mark-->
+        <link rel="stylesheet" href="/templates/{{templatefolder}}/assets/css/ezmark.css">
+
+        <!-- Font Awesome-->
+        <link href="/templates/{{templatefolder}}/assets/css/font-awesome.css" rel="stylesheet">
+
+        <!-- Animate-->
+        <link href="/templates/{{templatefolder}}/assets/css/animate-custom.css" rel="stylesheet">
+
+        <!-- Bootstrap core JavaScript -->
+        <script src="/templates/{{templatefolder}}/assets/js/jquery.js"></script>
+        <script src="/templates/{{templatefolder}}/dist/js/bootstrap.js"></script>
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+        <script src="/templates/{{templatefolder}}/assets/js/html5shiv.js"></script>
+        <script src="/templates/{{templatefolder}}/assets/js/respond.min.js"></script>
+        <![endif]-->
+
+  </head>
+  <body class="bg-med">
+
+        <div id="login" class="container">
+            <div class="row">
+                <div class="center-panel">
+                    <div class="col-md-3 col-sm-2 col-xs-1"></div>
+                    <div class="col-md-6 col-sm-8 col-xs-10 text-center">
+                        {% if message != '' %}
+                        <div class="alert alert-danger">
+                            {{ message }}
+                        </div>
+                        {% endif %}
+                    	<div class="custom-check animated fadeInDown">
+                                <form class="form-signin form-group" method="post" action="/ru/admin/index/login">
+                                <div class="input-stacked input-group-lg">
+                                        <input name="login" type="text" class="form-control" placeholder="Логин" required autofocus>
+                                        <input name="pass" type="password" class="form-control" placeholder="Пароль" required>
+                                    <input type="hidden" name="confirm" value="1"/>
+                                </div>
+                                <button class="btn btn-lg btn-primary btn-block" type="submit">
+                                     Войти</button>
+                                <label class="checkbox pull-left">
+                                    <input type="checkbox" value="remember-me">
+                                    Remember me
+                                </label>
+                                </form>
+                        </div>
+                        <div class="col-md-3 col-sm-2 col-xs-1"></div>
+                        <div class="clearfix"></div>
+                        <br>
+                        <a href="#" class="text-transparent">Need help? </a>
+
+
+
+                     </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Plugins & Custom -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <!-- EzMark -->
+        <script src="/templates/{{templatefolder}}/assets/js/jquery.ezmark.js"></script>
+        <script type="text/javascript">
+			$(function() {
+				$('.custom-check input').ezMark()
+			});	
+		</script>
+        
+		<!-- Custom -->
+		<script src="/templates/{{templatefolder}}/assets/js/script.js"></script>
+
+  </body>
+ </html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="W-ArtStudio">
+<title>{{ sitename }} - Управление сайтом</title>
+
+<!-- Bootstrap core CSS -->
+<link href="/templates/{{templatefolder}}/dist/css/bootstrap.css" rel="stylesheet">
+
+<head>
+    {% block head %}
+    <!-- Boostrap Theme -->
+    <link href="/templates/{{templatefolder}}/css/skin.css" rel="stylesheet">
+    <link href="/templates/{{templatefolder}}/css/boostrap-overrides.css" rel="stylesheet">
+    <link href="/templates/{{templatefolder}}/css/theme.css" rel="stylesheet">
+
+    <!-- Add custom CSS here -->
+    <link href="/templates/{{templatefolder}}/assets/css/sidebar.css" rel="stylesheet">
+
+    <!-- Plugins -->
+    <link href="/templates/{{templatefolder}}/assets/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="/templates/{{templatefolder}}/assets/css/ezmark.css">
+    <link href="/templates/{{templatefolder}}/assets/plugins/morris.js-0.4.3/morris.css" rel="stylesheet">
+    <link href="/templates/{{templatefolder}}/assets/css/animate-custom.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/templates/{{templatefolder}}/assets/plugins/calendar/zabuto_calendar.css">
+    <link rel="stylesheet" type="text/css" href="/templates/{{templatefolder}}/assets/plugins/colorbox-master/colorbox.css">
+    <link rel="stylesheet" type="text/css" href="/templates/{{templatefolder}}/assets/plugins/jquery-easy-pie-chart/jquery.easy-pie-chart.css">
+    <link href="/templates/{{templatefolder}}/assets/css/pushy.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+    {% endblock %}
+</head>
+<body>
+
+{% block body %}
+
+<!-- Container for chat panel push-->
+<div id="container">
+<!-- Top Navbar  -->
+<div class="navbar navbar-static-top navbar-default " role="navigation">
+    <div class="navbar-header navbar-inverse text-center">
+        <button type="button" class="navbar-toggle border-left-med no-radius" id="menu-toggle">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <button type="button" class="navbar-toggle border-left-med no-radius" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="avatar"><img src="/templates/{{templatefolder}}/img/avatar.jpg" alt="Ryan" class="img-circle"></span>
+        </button>
+        <!-- logo -->
+        <div class="navbar-brand"><a href="/{{ lang }}/admin"> <img src="/templates/{{templatefolder}}/img/wart.png" alt="{{ sitename }}" alt="logo"></a></div>
+        <!-- / logo -->
+    </div>
+    <!-- user -->
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+        {% include "navbar.html.twig" %}
+    </div>
+    <!-- / nav-collapse -->
+</div>
+<!-- / top Navbar -->
+
+<!-- Wrapper for content below nav bar -->
+<div id="wrapper">
+<!-- Sidebar -->
+<div id="sidebar-wrapper" class="stretch-full-height">
+    <ul class="sidebar-nav">
+    {% block leftmenu %}
+    {% include 'menu.html.twig' %}
+    {% endblock %}
+     </ul>
+</div><!-- /sidebar -->
+
+<!-- preloader -->
+<div class='preloader-wrapper'>
+    <div class="preloader">
+        <img src="/templates/{{templatefolder}}/img/preloader.png" alt='loading image'/>
+    </div>
+</div><!-- / preloader -->
+
+<!-- Keep all page content within the page-content-wrapper -->
+<div id="page-content-wrapper" class="animated-med-delay fadeInRight">
+    {% block crumbs %}
+    {% endblock %}
+    {% block content %}
+    {% endblock %}
+
+
+</div><!-- /page-content-wrapper -->
+</div><!-- / wrapper for content below nav bar -->
+
+</div><!-- end container for chat panel push-->
+{% block modal %}
+    {% endblock %}
+
+<!-- JavaScript -->
+<!-- Placed at the end of the document so the pages load faster -->
+<!-- Theme Core -->
+<script src="/templates/{{templatefolder}}/assets/js/jquery.js"></script>
+<script src="/templates/{{templatefolder}}/assets/js/modernizr-2.6.2.min.js"></script>
+<script src="/templates/{{templatefolder}}/dist/js/bootstrap.js"></script>
+<script type="text/javascript" src="/templates/{{templatefolder}}/assets/js/jquery-ui-1.10.4.custom.min.js"></script>
+
+<!-- Preloader -->
+<script>
+    $(window).load(function(){
+        $('.preloader-wrapper').fadeOut();
+    });
+</script>
+<!-- Pushy JS -->
+<script src="/templates/{{templatefolder}}/assets/js/pushy.js"></script>
+
+<!-- EzMark -->
+<script src="/templates/{{templatefolder}}/assets/js/jquery.ezmark.js"></script>
+<script type="text/javascript">
+    $(function() {
+        $('.custom-check input').ezMark()
+    });
+</script>
+
+<!-- Custom -->
+<script src="/templates/{{templatefolder}}/assets/js/sidebar-navbar.js"></script>
+<script src="/templates/{{templatefolder}}/assets/plugins/tinymce/js/tinymce/tinymce.min.js"></script>
+<script src="/templates/{{templatefolder}}/assets/plugins/colorbox-master/jquery.colorbox-min.js"></script>
+<script src="/templates/{{templatefolder}}/assets/js/script.js"></script>
+{% block script %}
+{% endblock %}
+
+{% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+{% macro menu(item) %}
+    {% if item.controller == 'unicon' %}
+        {% if item.action == 'category' %}
+            <li><a {% if item.active %}class="active" {% endif %}href="/{{ item.alias }}">{{ item.name }}</a></li>
+        {% elseif item.action == 'static' %}
+            <li><a {% if item.active %}class="active" {% endif %}href="/{{ item.alias }}">{{ item.name }}</a></li>
+        {% else %}
+            <li><a {% if item.active %}class="active" {% endif %}href="/{{ item.action }}/{{ item.alias }}">{{ item.name }}</a></li>
+        {% endif %}
+    {% else %}
+    {% endif %}
+{% endmacro %}

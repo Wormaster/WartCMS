@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>Neu v1.0  |  Responsive Admin Skin</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="dist/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Boostrap Theme -->
+    <link href="css/skin.css" rel="stylesheet">
+    <link href="css/boostrap-overrides.css" rel="stylesheet">
+    <link href="css/theme.css" rel="stylesheet">
+        
+    <!-- Add custom CSS here -->
+    <link href="assets/css/sidebar.css" rel="stylesheet">
+    
+    <!-- Plugins -->
+    <link href="assets/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/ezmark.css">
+    <link href="assets/css/animate-custom.css" rel="stylesheet">
+	<link href="assets/css/pushy.css" rel="stylesheet">
+	<link href="assets/plugins/datepicker/css/datepicker.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+        <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+	
+    
+</head>
+<body>
+
+
+    <!-- Slide out chat panel -->
+    <nav class="pushy pushy-right">
+        <div class="well-lg no-radius">
+            <i class="icon-group"></i>&nbsp;&nbsp;&nbsp;<strong>Chat</strong>&nbsp;&nbsp;<span class="text-transparent">(4)</span>
+            <a href="javascript:;" class="close-chat-panel" data-dismiss="panel" aria-hidden="true"><i class="icon-remove pull-right text-transparent"></i></a>
+			<br><br><div class="input-group inverse input-group-sm no-padding">
+                      <span class="input-group-addon"><i class="icon-search text-transparent"></i></span>
+                      <input type="text" class="form-control" placeholder="Search">
+            </div>
+           <div class="clearfix"></div>
+        </div>
+        <ul class="chat align-center-vert-alt">
+            <li>
+            	<a href="#"><img src="img/tn_user_07.jpg" alt="User" class="img-circle user-thumbnail-xs"></a>
+            	<small><a href="#"> Amin Bhatnagar<span class="text-online pull-right"><i class="icon-circle text-online "></i></span></a></small>
+                <div class="clearfix"></div>
+            </li>
+            <li>
+            	<a href="#" class="pull-left"><img src="img/tn_user_02.jpg" alt="User" class="img-circle user-thumbnail-xs"></a>
+            	<small><a href="#">Gina Wheeling<span class="text-online pull-right"><i class="icon-circle text-online "></i></span></a></small>
+                <div class="clearfix"></div>
+            </li>
+            <li>
+            	<a href="#" class="pull-left"><img src="img/tn_user_03.jpg" alt="User" class="img-circle user-thumbnail-xs"></a>
+            	<small><a href="#">Ryan Smith<span class="text-online pull-right"><i class="icon-circle text-online "></i></span></a></small>
+                <div class="clearfix"></div>
+            </li>
+            <li>
+            	<a href="#" class="pull-left"><img src="img/tn_user_04.jpg" alt="User" class="img-circle user-thumbnail-xs"></a>
+            	<small><a href="#">Hai Thatcher<span class="text-online pull-right"><i class="icon-circle text-online "></i></span></a></small>
+                <div class="clearfix"></div>
+            </li>
+            <li>
+            	<a href="#" class="pull-left"><img src="img/tn_user_05.jpg" alt="User" class="img-circle user-thumbnail-xs"></a>
+            	<small><a href="#">Jane Doe<span class="text-online pull-right"><i class="icon-circle text-danger"></i></span></a></small>
+                <div class="clearfix"></div>
+            </li>
+           <li>
+            	<a href="#" class="pull-left"><img src="img/tn_user_06.jpg" alt="User" class="img-circle user-thumbnail-xs"></a>
+            	<small><a href="#">Carson Winters<span class="text-online pull-right"><i class="icon-circle text-danger "></i></span></a></small>
+                <div class="clearfix"></div>
+            </li>
+            <li class="idle">
+            	<a href="#" class="pull-left"><img src="img/tn_user_01.jpg" alt="User" class="img-circle user-thumbnail-xs"></a>
+            	<small><a href="#">Peyton Max <span class="pull-right"><i class="icon-circle"></i></span></a></small>
+                <div class="clearfix"></div>
+            </li>
+            <li class="idle">
+            	<a href="#" class="pull-left"><img src="img/tn_user_05.jpg" alt="User" class="img-circle user-thumbnail-xs"></a>
+            	<small><a href="#">Brianna Winters<span class="pull-right"><i class="icon-circle"></i></span></a></small>
+                <div class="clearfix"></div>
+            </li>
+            <li class="idle">
+            	<a href="#" class="pull-left"><img src="img/tn_user_03.jpg" alt="User" class="img-circle user-thumbnail-xs"></a>
+            	<small><a href="#">Micheal Anderson<span class="pull-right"><i class="icon-circle"></i></span></a></small>
+                <div class="clearfix"></div>
+            </li>
+        </ul>
+    </nav>
+
+
+  <!-- Container for chat panel push-->
+  <div id="container"> 
+   <!-- Top Navbar  -->
+        <div class="navbar navbar-static-top navbar-default " role="navigation">
+            <div class="navbar-header navbar-inverse text-center">
+                <button type="button" class="navbar-toggle border-left-med no-radius" id="menu-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                </button>
+                <button type="button" class="navbar-toggle border-left-med no-radius" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="avatar"><img src="img/avatar.jpg" alt="Ryan" class="img-circle"></span>
+                </button>
+                <!-- logo -->
+                <div class="navbar-brand"><a href="index.html"> <img src="img/logo.png" alt="logo"></a></div>
+                <!-- / logo -->
+            </div>
+            <!-- user -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav navbar-right navbar-user">
+                    <!-- new messages -->
+                    <li class="dropdown messages-dropdown">
+                        <a href="#" class="dropdown-toggle announcements" data-toggle="dropdown"><i class="icon-envelope-alt"></i><span class="badge">23</span></a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-header header-inverse"><i class="icon-envelope"></i>23 New Messages</li>
+                            <li class="message-preview">
+                                    <a href="#">
+                                    <img src="img/tn_user_02.jpg" alt="User" class="img-circle user-thumbnail-xs">
+                                    <span class="name pull-left">Maya Smith</span>
+                                    <span class="label label-primary pull-right">Just Now</span><br>
+                                    <span class="message text-transparent">Hi Ryan, I received a message from quis...</span>
+                                    </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li class="message-preview">
+                                <a href="#">
+                                <img src="img/tn_user_01.jpg" alt="User" class="img-circle user-thumbnail-xs">
+                                <span class="name pull-left">James Doe</span>
+                                <span class="time pull-right text-transparent"><i class="icon-time"></i> 4:34 PM</span><br>
+                                <span class="message text-transparent">Good Afternoon Ryan, Were you able to...</span>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li class="message-preview">
+                                <a href="#">
+                                <img src="img/tn_user_04.jpg" alt="User" class="img-circle user-thumbnail-xs">
+                                <span class="name pull-left">Benjamin Taylor</span>
+                                <span class="time pull-right text-transparent"><i class="icon-time"></i> 1:56 PM</span><br>
+                                <span class="message text-transparent">Hey, Can you give me a call when you get a...</span>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li class="dropdown-footer text-center">
+                                <a href="#">
+                                See all new messages
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- alerts -->
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle announcements" data-toggle="dropdown">
+                        <i class="icon-flag-alt"></i><span class="badge animated-delay flash">12</span></a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-header header-inverse"><i class="icon-star"></i>12 Notifications </li>
+                            <li class="notification">
+                                <a href="#">
+                                <span class="pull-left"><span class="label label-success"><i class="icon-comment"></i></span>  New Comment</span>
+                                <span class="time pull-right text-transparent">Just Now</span><br>
+                                </a>
+                            </li>
+                            <li class="notification">
+                                <a href="#">
+                                <span class="pull-left"><span class="label label-success"><i class="icon-comment"></i></span>  New Comment</span>
+                                <span class="time pull-right text-transparent">5 Minutes Ago</span><br>
+                                </a>
+                            </li>
+                            <li class="notification">
+                                <a href="#">
+                                <span class="pull-left"><span class="label label-primary"><i class="icon-user"></i></span>  12 New Users</span>
+                                <span class="time pull-right text-transparent">23 Minutes ago</span><br>
+                                </a>
+                            </li>
+                            <li class="notification">
+                                <a href="#">
+                                <span class="pull-left"><span class="label label-danger"><i class="icon-flag"></i></span>  Canceled Transaction</span>
+                                <span class="time pull-right text-transparent">12 Hours Ago</span><br>
+                                </a>
+                            </li>
+                            <li class="notification">
+                                <a href="#">
+                                <span class="pull-left"><span class="label label-warning"><i class="icon-shopping-cart"></i></span>  Canceled Transaction</span>
+                                <span class="time pull-right text-transparent">Yesterday</span><br>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li class="dropdown-footer text-center">
+                                <a href="#">
+                                See all notifications
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown alerts-dropdown">
+                        <a href="#" class="dropdown-toggle announcements" data-toggle="dropdown"><i class="icon-bar-chart"></i><span class="badge">56</span></a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-header header-inverse"><i class="icon-bar-chart"></i>6 Pending Tasks </li>
+                            <li>
+                                <a href="javascript:void(0);">
+                                    <span class="task">
+                                    <span class="desc">November orders </span>
+                                    </span>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);">
+                                    <span class="task">
+                                    <span class="desc">Invoices paid</span>
+                                    </span>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-success"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width:65%">
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);">
+                                    <span class="task">
+                                    <span class="desc">Updates</span>
+                                    </span>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-warning"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width:35%">
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);">
+                                    <span class="task">
+                                    <span class="desc">Unread emails</span>
+                                    </span>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-danger"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width:15%">
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li class="dropdown-footer text-center">
+                                <a href="#">
+                                See all tasks
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                    	<a href="#"><div class="menu-btn"><i class="icon-comment-alt"></i><span class="badge">2</span></div></a>
+                      
+                    </li>
+                    <li class="avatar dropdown user-dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="img/avatar.jpg" alt="Ryan" class="img-circle nav-avatar">Welcome Ryan!<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="user-profile.html"><i class="icon-user"></i> Profile</a></li>
+                            <li><a href="email.html"><i class="icon-envelope"></i> Inbox</a></li>
+                            <li><a href="#"><i class="icon-gear"></i> Settings</a></li>
+                            <li class="divider"></li>
+                            <li><a href="login.html"><i class="icon-power-off"></i> Log Out</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- / nav-collapse -->
+        </div>
+        <!-- / top Navbar -->
+        
+		<!-- Wrapper for content below nav bar -->
+        <div id="wrapper">
+         <!-- Sidebar -->
+          <div id="sidebar-wrapper" class="stretch-full-height">
+            <ul class="sidebar-nav">
+              <li>
+                <a href="index.html">
+                <span class="nav-icon"><i class="icon-dashboard icon-2x"></i></span>
+                <span class="sidebar-menu-item-text">Dashboard</span></a>            
+              </li>
+              <li>
+                 <a href="email.html">
+                 <span class="nav-icon"><i class="icon-envelope-alt icon-2x"></i></span>
+                 <span class="sidebar-menu-item-text">Email</span> <span class="responsive-hide badge">103</span>
+                 </a>
+              </li>
+              <li class="nav-header"> 
+                  <a href="#" data-toggle="collapse" data-target="#layouts">
+                      <span class="nav-icon"><i class="icon-folder-open icon-2x"></i></span>
+                      <span class="sidebar-menu-item-text">Layouts</span>
+                      <i class="icon-chevron-down pull-right"></i>
+                  </a>
+                  <ul class="nav nav-list collapse submenu" id="layouts">
+						<li><a href="boxedlayout.html">Boxed Layout</a></li>
+                        <li><a href="horizontal-nav.html">Horizontal Menu</a></li>
+                        <li><a href="skin-opt-1.html">Sample Skin</a></li>
+                    </ul>
+        	  </li>
+              <li class="nav-header"  data-toggle="collapse" data-target="#uiMenu"> 
+                  <a href="#">
+                      <span class="nav-icon"><i class="icon-tablet icon-2x"></i></span>
+                      <span class="sidebar-menu-item-text">UI Set</span>
+                      <i class="icon-chevron-down pull-right"></i>
+                  </a>
+                  <ul class="nav nav-list collapse submenu" id="uiMenu">
+                        <li><a href="buttons.html">Buttons</a></li>
+                        <li><a href="typography.html">Typography</a></li>
+                        <li><a href="modals.html">Modals</a></li>
+                        <li><a href="panels.html">Panels</a></li>
+                        <li><a href="tabs.html">Tabs & Accordians</a></li>
+                        <li><a href="sliders.html">Sliders</a></li>
+                        <li><a href="notifications.html">Notifications</a></li>
+                    </ul>
+        	  </li>
+        	  <li class="nav-header"  data-toggle="collapse" data-target="#pages"> 
+                  <a href="#">
+                      <span class="nav-icon"><i class="icon-copy icon-2x"></i></span>
+                      <span class="sidebar-menu-item-text">Pages</span>
+                      <i class="icon-chevron-down pull-right"></i>
+                  </a>
+                  <ul class="nav nav-list collapse submenu" id="pages">
+                         <li><a href="user-profile.html">User Profile</a></li>
+                         <li><a href="login.html">Login</a></li>
+                         <li><a href="register.html">Register</a></li>
+                         <li><a href="404.html">404 Page</a></li><li><a href="500.html">500 Page</a></li>
+                         <li><a href="lock.html">Lock Screen</a></li>
+                         <li><a href="message.html">Send Message</a></li>
+                         <li><a href="fileupload.html">File Upload</a></li>
+                    </ul>
+        	  </li>
+        	  <li class="nav-header"  data-toggle="collapse" data-target="#tables"> 
+                  <a href="#">
+                      <span class="nav-icon"><i class="icon-table icon-2x"></i></span>
+                      <span class="sidebar-menu-item-text">Tables</span>
+                      <i class="icon-chevron-down pull-right"></i>
+                  </a>
+                  <ul class="nav nav-list collapse submenu" id="tables">
+						<li><a href="basic.html">Basic</a></li>
+                        <li><a href="data.html">Data</a></li>
+                    </ul>
+        	  </li>
+              <li>
+                <a href="charts.html">
+                <span class="nav-icon"><i class="icon-bar-chart icon-2x"></i></span>
+                <span class="sidebar-menu-item-text">Charts</span></a>            
+              </li>
+              <li>
+                <a href="maps.html">
+                <span class="nav-icon"><i class="icon-map-marker icon-2x"></i></span>
+                <span class="sidebar-menu-item-text">Map</span></a>            
+              </li>
+              <li>
+                <a href="calendar.html">
+                <span class="nav-icon"><i class="icon-calendar icon-2x"></i></span>
+                <span class="sidebar-menu-item-text">Calendar</span></a>            
+              </li>
+              <li>
+                <a href="project-manager.html" class="active-title">
+                <span class="nav-icon"><i class="icon-edit icon-2x"></i></span>
+                <span class="sidebar-menu-item-text">Project Manager</span></a>            
+              </li>
+            </ul>
+          </div><!-- /sidebar -->
+          
+          <!-- preloader -->
+          <div class='preloader-wrapper'>
+           <div class="preloader">
+               <img src="img/preloader.png" alt='loading image'/>
+           </div>
+		  </div><!-- / preloader -->
+
+          <!-- Keep all page content within the page-content-wrapper -->
+          <div id="page-content-wrapper" class="stretch-full-height no-padding animated-med-delay fadeInRight white-bg">
+            <!--Task sidebar-->
+                    <div id="task-sidebar" class="col-md-3 col-sm-4 col-xs-12 no-padding">
+                         <div class="text-center brand-primary-med-bg">
+                         	<div class="col-xs-12">
+                                <ul class="list-inline">
+                                	<li class="col-md-6"><a href="#" class="text-transparent"><h2 class="pull-left"><i class="icon-pencil"></i></h2></a></li>
+                                	<li><a href="#" class=" text-transparent"><h2 class="pull-right">Tasks</h2></a></li>
+                                </ul>
+                             </div>
+                         	<div class="clearfix"></div>
+                         </div>
+                         <div id="task-nav" class="col-sm-12 table-rounded-cell-corners">
+                               <table class="table table-striped table-hover">
+                                    <tr>	
+                                    	<td><a href="#"><i class="icon-star"></i>Today</a></td>
+                                    </tr>
+                                    <tr>
+                                    	<td><a href="#" class="text-transparent"><i class="icon-inbox"></i>Tomorrow</a></td>
+                                    </tr>
+                                    <tr>
+                                    	<td><a href="#" class="text-transparent"><i class="icon-file-alt"></i>Next Week </a></td>
+                                    </tr>
+                                    <tr>
+                                    	<td><a href="#" class="text-transparent"><i class="icon-remove-circle"></i>Pending</a></td>
+                                    </tr>
+                                    <tr>
+                                    	<td><a href="#" class="text-transparent"><i class="icon-ok"></i>Completed</a></td>
+                                    </tr>
+                                    <tr>
+                                    	<td><a href="#" class="text-transparent"><i class="icon-plus"></i>Add a New Folder</a></td>
+                                    </tr>
+                               </table>
+                           </div>
+                    </div><!--/task sidebar-->
+                    <!--Projects-->
+    				<div id="project-list" class="col-md-9 col-sm-8 col-xs-12 gray-lighter-bg stretch-full-height ">
+                          <div class="row col-sm-12 well-lg transparent">
+                            <div class="pull-left">
+                                <button class="btn btn-sm  btn-default">
+                                	<i class="icon-plus-sign"></i> &nbsp;Add New
+                                </button>
+                            </div>
+                            <div class="pull-right tools text-transparent icons-medium">
+                                	<a href="#"><i class="icon-collapse text-transparent"></i></a>
+                                    <a href="#"><i class="icon-cog text-transparent"></i></a>
+                                    <a href="#"><i class="icon-microphone text-transparent"></i></a>
+                                    <a href="#"><i class="icon-mail-forward text-transparent"></i></a>
+                            </div>
+                         </div>  
+                       <!-- Project Accordions -->
+                            <!-- Accordion 1 -->
+                            <div class="row col-sm-12">
+                           		 <div class="panel-group" id="accordionrnd_1">
+                                 <!-- Accordion header -->
+                                    <div class="panel top no-icon">
+                                     <div class="panel-heading">
+                                        <div class="row col-md-12">
+                                           	<span class="date pull-left"><input id="dp1" class="form-control" type="text"  data-date-format="mm/dd" value="02/16"></span>			   
+                                           <div class="col-xs-6">
+                                               <h4>WP Theme Development</h4>
+                                               <div class="col-xs-6">
+                                                    <div class="progress progress-striped active">
+                                                                <div class="progress-bar progress-bar-gray"  role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width:85%"></div>
+                                                    </div> 
+                                               </div>
+                                           </div>
+                                           <div class="tools pull-right text-transparent">
+                                           		<a href="#"><i class="icon-refresh"></i></a>
+                                                <a href="#"><i class="icon-trash"></i></a>
+                                                <a href="#"><i class="icon-star"></i></a>
+                                           </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                  </div><!-- / Accordion header -->
+                                   <!-- / project description -->
+                                  <div class="panel">
+                                    <div class="panel-heading task-list">
+                                      <a data-toggle="collapse" data-parent="#accordionrnd_1" href="#project1b">
+                                         <i class="icon-pencil text-transparent"></i>
+                                         &nbsp;&nbsp;Description
+                                      </a>
+                                    </div>
+                                    <div id="project1b" class="accord-collapse panel-collapse collapse">
+                                      <div class="panel-body">
+                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
+                                      </div>
+                                    </div>
+                                  </div><!-- / project description -->
+                                  <!-- notes -->
+                                  <div class="panel">
+                                    <div class="panel-heading brand-highlight task-list">
+                                      <a data-toggle="collapse" data-parent="#accordionrnd_1" href="#project1c">
+                                         <i class="icon-file-alt text-transparent"></i>
+                                         &nbsp;&nbsp;Notes&nbsp;&nbsp;&nbsp;&nbsp;<span class="label label-danger">New Note</span>
+                                      </a>
+                                    </div>
+                                    <div id="project1c" class="accord-collapse panel-collapse collapse">
+                                      <div class="panel-body">
+                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
+                                      </div>
+                                    </div>
+                                  </div><!-- notes -->
+                                  <!-- team -->
+                                  <div class="panel">
+                                    <div class="panel-heading task-list">
+                                      <a data-toggle="collapse" data-parent="#accordionrnd_1" href="#project1d">
+                                         <i class="icon-group text-transparent"></i>
+                                         &nbsp;&nbsp;Team 
+                                      </a>
+                                    </div>
+                                    <div id="project1d" class="accord-collapse panel-collapse collapse">
+                                      <div class="panel-body">
+                                          <div class="col-md-3"> 
+                                          		<ul class="list-inline">
+                                                	<li class="pull-left"><img src="img/tn_user_01.jpg" alt="team member" class="img-circle"></li>
+                                                    <li>
+                                                    	<h4><a href="#">Chris Johnson</a></h4>
+                                                        <p>UX Designer</p>
+                                                        <button class="btn btn-gray btn-xs"><i class="icon-envelope"></i></button>
+                                                        <button class="btn btn-gray btn-xs"><i class="icon-pencil"></i></button>
+                                                        <button class="btn btn-gray btn-xs"><i class="icon-comment"></i></button>
+                                                    </li>
+                                                </ul>
+                                          </div>
+                                          <div class="col-md-3">
+                                                <ul class="list-inline">
+                                                	<li class="pull-left"><img src="img/tn_user_02.jpg" alt="team member" class="img-circle"></li>
+                                                    <li>
+                                                    	<h4><a href="#">Jill Doe</a></h4>
+                                                        <p>Web Designer</p>
+                                                        <button class="btn btn-gray btn-xs"><i class="icon-envelope"></i></button>
+                                                        <button class="btn btn-gray btn-xs"><i class="icon-pencil"></i></button>
+                                                        <button class="btn btn-gray btn-xs"><i class="icon-comment"></i></button>
+                                                    </li>
+                                                </ul> 	
+                                          </div>
+                                           <div class="col-md-3">
+                                                <ul class="list-inline">
+                                                	<li class="pull-left"><img src="img/tn_user_03.jpg" alt="team member" class="img-circle"></li>
+                                                    <li>
+                                                    	<h4><a href="#">Micheal Garcia</a></h4>
+                                                        <p>Graphic Designer</p>
+                                                        <button class="btn btn-gray btn-xs"><i class="icon-envelope"></i></button>
+                                                        <button class="btn btn-gray btn-xs"><i class="icon-pencil"></i></button>
+                                                        <button class="btn btn-gray btn-xs"><i class="icon-comment"></i></button>
+                                                    </li>
+                                                </ul> 	
+                                          </div>
+                                           <div class="col-md-3">
+                                                <ul class="list-inline">
+                                                	<li class="pull-left"><img src="img/tn_user_04.jpg" alt="team member" class="img-circle"></li>
+                                                    <li>
+                                                    	<h4><a href="#">Daniel Anderson</a></h4>
+                                                        <p>Project Manager</p>
+                                                        <button class="btn btn-gray btn-xs"><i class="icon-envelope"></i></button>
+                                                        <button class="btn btn-gray btn-xs"><i class="icon-pencil"></i></button>
+                                                        <button class="btn btn-gray btn-xs"><i class="icon-comment"></i></button>
+                                                    </li>
+                                                </ul>	
+                                          </div>
+                                         
+                                    </div>
+                                  </div></div><!--/team -->
+                                  
+                                  <!-- bottom panel -->
+                                  <div class="panel bottom">
+                                        <div class="panel-heading task-list">
+                                          <a data-toggle="collapse" data-parent="#accordionrnd_1" href="#project1e">
+                                             <i class="icon-user text-transparent"></i>
+                                             &nbsp;&nbsp;Recent Activity
+                                          </a>
+                                        </div>
+                                        <div id="project1e" class="accord-collapse panel-collapse collapse">
+                                          <div class="panel-body no-padding">
+                                            <table class="table"> 
+                                            <tr>
+                                                <td class="text-center"><img src="img/tn_user_02.jpg" alt="User" class="img-circle nav-avatar"></td>
+                                                <td><a href="#"><strong>Jill Doe</strong><br>Finished task three and logged her weekly hours</a></td>
+                                                <td><a href="#" class="text-transparent"><span class="time">Just now</span></a></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center"><img src="img/tn_user_01.jpg" alt="User" class="img-circle nav-avatar"></td>
+                                                <td><a href="#"><strong>Micheal Anderson</strong><br>Asked a question about task five</a></td>
+                                                <td><A href="#" class="text-transparent"><span class="time">5 min ago</span></a></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center"><img src="img/tn_user_04.jpg" alt="User" class="img-circle nav-avatar"></td>
+                                                <td><a href="#"><strong>Hai Thatcher</strong><br>Closed tasks 6, 7, 8 and 9 and posted updates regarding task 10</a></td>
+                                                <td><A href="#" class="text-transparent"><span class="time">3:30 pm</span></a></td>
+                                            </tr>
+    
+                                        </table>
+                                          </div>
+                                        </div>
+                                  </div>
+                                  <!-- /bottom  panel -->
+                                 	
+                                 </div>
+                            </div>
+                            <!-- / accordian 1-->
+                            
+                             <!-- Accordian 2-->   
+                            <div class="row col-sm-12">
+                           		 <div class="panel-group" id="accordionrnd_2">
+                                 <!-- Accordion header -->
+                                    <div class="panel top no-icon">
+                                     <div class="panel-heading">
+                                        <div class="row col-md-12">
+                                           <span class="date pull-left"><input id="dp2" class="form-control" type="text"  data-date-format="mm/dd" value="03/01"></span>			   
+                                           <div class="col-xs-6">
+                                               <h4>Studio 504 Brand Identity Development</h4>
+                                               <div class="col-xs-6">
+                                                    <div class="progress progress-striped active">
+                                                                <div class="progress-bar progress-bar-gray"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%"></div>
+                                                    </div> 
+                                               </div>
+                                           </div>
+                                           <div class="tools pull-right text-transparent">
+                                           		<a href="#"><i class="icon-refresh"></i></a>
+                                                <a href="#"><i class="icon-trash"></i></a>
+                                                <a href="#"><i class="icon-star"></i></a>
+                                           </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                  </div><!-- / Accordion header -->
+                                  <!-- / project description -->
+                                  <div class="panel">
+                                    <div class="panel-heading task-list">
+                                      <a data-toggle="collapse" data-parent="#accordionrnd_2" href="#project2b">
+                                         <i class="icon-pencil text-transparent"></i>
+                                         &nbsp;&nbsp;Description
+                                      </a>
+                                    </div>
+                                    <div id="project2b" class="accord-collapse panel-collapse collapse">
+                                      <div class="panel-body">
+                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
+                                      </div>
+                                    </div>
+                                  </div><!-- / project description -->
+                                  <!-- notes -->
+                                  <div class="panel">
+                                    <div class="panel-heading task-list">
+                                      <a data-toggle="collapse" data-parent="#accordionrnd_2" href="#project2c">
+                                         <i class="icon-file-alt text-transparent"></i>
+                                         &nbsp;&nbsp;Notes
+                                      </a>
+                                    </div>
+                                    <div id="project2c" class="accord-collapse panel-collapse collapse">
+                                      <div class="panel-body">
+                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
+                                      </div>
+                                    </div>
+                                  </div><!-- notes -->
+                                  <!-- team -->
+                                  <div class="panel">
+                                    <div class="panel-heading task-list">
+                                      <a data-toggle="collapse" data-parent="#accordionrnd_2" href="#project2d">
+                                         <i class="icon-group text-transparent"></i>
+                                         &nbsp;&nbsp;Team 
+                                      </a>
+                                    </div>
+                                    <div id="project2d" class="accord-collapse panel-collapse collapse">
+                                      <div class="panel-body">
+                                          <div class="col-md-3"> 
+                                          		<ul class="list-inline">
+                                                	<li class="pull-left"><img src="img/tn_user_01.jpg" alt="team member" class="img-circle"></li>
+                                                    <li>
+                                                    	<h4><a href="#">Chris Johnson</a></h4>
+                                                        <p>UX Designer</p>
+                                                        <button class="btn btn-gray btn-xs"><i class="icon-envelope"></i></button>
+                                                        <button class="btn btn-gray btn-xs"><i class="icon-pencil"></i></button>
+                                                        <button class="btn btn-gray btn-xs"><i class="icon-comment"></i></button>
+                                                    </li>
+                                                </ul>
+                                          </div>
+                                          <div class="col-md-3">
+                                                <ul class="list-inline">
+                                                	<li class="pull-left"><img src="img/tn_user_02.jpg" alt="team member" class="img-circle"></li>
+                                                    <li>
+                                                    	<h4><a href="#">Jill Doe</a></h4>
+                                                        <p>Web Designer</p>
+                                                        <button class="btn btn-gray btn-xs"><i class="icon-envelope"></i></button>
+                                                        <button class="btn btn-gray btn-xs"><i class="icon-pencil"></i></button>
+                                                        <button class="btn btn-gray btn-xs"><i class="icon-comment"></i></button>
+                                                    </li>
+                                                </ul> 	
+                                          </div>
+                                           <div class="col-md-3">
+                                                <ul class="list-inline">
+                                                	<li class="pull-left"><img src="img/tn_user_03.jpg" alt="team member" class="img-circle"></li>
+                                                    <li>
+                                                    	<h4><a href="#">Micheal Garcia</a></h4>
+                                                        <p>Graphic Designer</p>
+                                                        <button class="btn btn-gray btn-xs"><i class="icon-envelope"></i></button>
+                                                        <button class="btn btn-gray btn-xs"><i class="icon-pencil"></i></button>
+                                                        <button class="btn btn-gray btn-xs"><i class="icon-comment"></i></button>
+                                                    </li>
+                                                </ul> 	
+                                          </div>
+                                           <div class="col-md-3">
+                                                <ul class="list-inline">
+                                                	<li class="pull-left"><img src="img/tn_user_04.jpg" alt="team member" class="img-circle"></li>
+                                                    <li>
+                                                    	<h4><a href="#">Daniel Anderson</a></h4>
+                                                        <p>Project Manager</p>
+                                                        <button class="btn btn-gray btn-xs"><i class="icon-envelope"></i></button>
+                                                        <button class="btn btn-gray btn-xs"><i class="icon-pencil"></i></button>
+                                                        <button class="btn btn-gray btn-xs"><i class="icon-comment"></i></button>
+                                                    </li>
+                                                </ul>	
+                                          </div>
+                                         
+                                    </div>
+                                  </div></div><!--/team -->
+                                   <!-- bottom panel -->
+                                  <div class="panel bottom">
+                                        <div class="panel-heading brand-highlight task-list">
+                                          <a data-toggle="collapse" data-parent="#accordionrnd_2" href="#project2e">
+                                             <i class="icon-user text-transparent"></i>
+                                             &nbsp;&nbsp;Recent Activity&nbsp;&nbsp;<span class="label label-danger">New Activity</span>
+                                          </a>
+                                        </div>
+                                        <div id="project2e" class="accord-collapse panel-collapse collapse">
+                                          <div class="panel-body no-padding">
+                                            <table class="table"> 
+                                            <tr class="animated flash">
+                                                <td class="text-center"><img src="img/tn_user_05.jpg" alt="User" class="img-circle nav-avatar"></td>
+                                                <td><a href="#"><strong>Jill Doe</strong><br>Finished task three and logged her weekly hours</a></td>
+                                                <td><a href="#" class="text-transparent"><span class="time">Just now</span></a></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center"><img src="img/tn_user_06.jpg" alt="User" class="img-circle nav-avatar"></td>
+                                                <td><a href="#"><strong>Micheal Anderson</strong><br>Asked a question about task five</a></td>
+                                                <td><A href="#" class="text-transparent"><span class="time">5 min ago</span></a></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center"><img src="img/tn_user_07.jpg" alt="User" class="img-circle nav-avatar"></td>
+                                                <td><a href="#"><strong>Hai Thatcher</strong><br>Closed tasks 6, 7, 8 and 9 and posted updates regarding task 10</a></td>
+                                                <td><A href="#" class="text-transparent"><span class="time">3:30 pm</span></a></td>
+                                            </tr>
+    
+                                        </table>
+                                          </div>
+                                        </div>
+                                  </div>
+                                  <!-- /bottom  panel -->
+                                 	
+                                 </div>
+                            </div>
+                            <!-- / accordian 2-->
+                            <!-- Accordian 3 -->   
+                            <div class="row col-sm-12">
+                           		 <div class="panel-group" id="accordionrnd_3">
+                                 <!-- Accordion header -->
+                                    <div class="panel top no-icon">
+                                     <div class="panel-heading">
+                                        <div class="row col-md-12">
+                                           <span class="date pull-left"><input id="dp3" class="form-control" type="text"  data-date-format="mm/dd" value="03/26"></span>			   
+                                           <div class="col-xs-6">
+                                               <h4>Cross Compatability Check</h4>
+                                               <div class="col-xs-6">
+                                                    <div class="progress progress-striped active">
+                                                                <div class="progress-bar progress-bar-gray"  role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width:10%"></div>
+                                                    </div> 
+                                               </div>
+                                           </div>
+                                           <div class="tools pull-right text-transparent">
+                                           		<a href="#"><i class="icon-refresh"></i></a>
+                                                <a href="#"><i class="icon-trash"></i></a>
+                                                <a href="#"><i class="icon-star"></i></a>
+                                           </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                  </div><!-- / Accordion header -->
+                                  <!-- / project description -->
+                                  <div class="panel">
+                                    <div class="panel-heading task-list">
+                                      <a data-toggle="collapse" data-parent="#accordionrnd_3" href="#project3b">
+                                         <i class="icon-pencil text-transparent"></i>
+                                         &nbsp;&nbsp;Description
+                                      </a>
+                                    </div>
+                                    <div id="project3b" class="accord-collapse panel-collapse collapse">
+                                      <div class="panel-body">
+                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
+                                      </div>
+                                    </div>
+                                  </div><!-- / project description -->
+                                  <!-- notes -->
+                                  <div class="panel">
+                                    <div class="panel-heading task-list">
+                                      <a data-toggle="collapse" data-parent="#accordionrnd_3" href="#project3c">
+                                         <i class="icon-file-alt text-transparent"></i>
+                                         &nbsp;&nbsp;Notes
+                                      </a>
+                                    </div>
+                                    <div id="project3c" class="accord-collapse panel-collapse collapse">
+                                      <div class="panel-body">
+                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
+                                      </div>
+                                    </div>
+                                  </div><!-- notes -->
+                                  <!-- team -->
+                                  <div class="panel">
+                                    <div class="panel-heading task-list">
+                                      <a data-toggle="collapse" data-parent="#accordionrnd_3" href="#project3d">
+                                         <i class="icon-group text-transparent"></i>
+                                         &nbsp;&nbsp;Team 
+                                      </a>
+                                    </div>
+                                    <div id="project3d" class="accord-collapse panel-collapse collapse">
+                                      <div class="panel-body">
+                                          <div class="col-md-3"> 
+                                          		<ul class="list-inline">
+                                                	<li class="pull-left"><img src="img/tn_user_01.jpg" alt="team member" class="img-circle"></li>
+                                                    <li>
+                                                    	<h4><a href="#">Chris Johnson</a></h4>
+                                                        <p>UX Designer</p>
+                                                        <button class="btn btn-gray btn-xs"><i class="icon-envelope"></i></button>
+                                                        <button class="btn btn-gray btn-xs"><i class="icon-pencil"></i></button>
+                                                        <button class="btn btn-gray btn-xs"><i class="icon-comment"></i></button>
+                                                    </li>
+                                                </ul>
+                                          </div>
+                                          <div class="col-md-3">
+                                                <ul class="list-inline">
+                                                	<li class="pull-left"><img src="img/tn_user_02.jpg" alt="team member" class="img-circle"></li>
+                                                    <li>
+                                                    	<h4><a href="#">Jill Doe</a></h4>
+                                                        <p>Web Designer</p>
+                                                        <button class="btn btn-gray btn-xs"><i class="icon-envelope"></i></button>
+                                                        <button class="btn btn-gray btn-xs"><i class="icon-pencil"></i></button>
+                                                        <button class="btn btn-gray btn-xs"><i class="icon-comment"></i></button>
+                                                    </li>
+                                                </ul> 	
+                                          </div>
+                                           <div class="col-md-3">
+                                                <ul class="list-inline">
+                                                	<li class="pull-left"><img src="img/tn_user_03.jpg" alt="team member" class="img-circle"></li>
+                                                    <li>
+                                                    	<h4><a href="#">Micheal Garcia</a></h4>
+                                                        <p>Graphic Designer</p>
+                                                        <button class="btn btn-gray btn-xs"><i class="icon-envelope"></i></button>
+                                                        <button class="btn btn-gray btn-xs"><i class="icon-pencil"></i></button>
+                                                        <button class="btn btn-gray btn-xs"><i class="icon-comment"></i></button>
+                                                    </li>
+                                                </ul> 	
+                                          </div>
+                                           <div class="col-md-3">
+                                                <ul class="list-inline">
+                                                	<li class="pull-left"><img src="img/tn_user_04.jpg" alt="team member" class="img-circle"></li>
+                                                    <li>
+                                                    	<h4><a href="#">Daniel Anderson</a></h4>
+                                                        <p>Project Manager</p>
+                                                        <button class="btn btn-gray btn-xs"><i class="icon-envelope"></i></button>
+                                                        <button class="btn btn-gray btn-xs"><i class="icon-pencil"></i></button>
+                                                        <button class="btn btn-gray btn-xs"><i class="icon-comment"></i></button>
+                                                    </li>
+                                                </ul>	
+                                          </div>
+                                         
+                                    </div>
+                                  </div></div><!--/team -->
+                                   <!-- bottom panel -->
+                                  <div class="panel bottom">
+                                        <div class="panel-heading task-list">
+                                          <a data-toggle="collapse" data-parent="#accordionrnd_3" href="#project3e">
+                                             <i class="icon-user text-transparent"></i>
+                                             &nbsp;&nbsp;Recent Activity
+                                          </a>
+                                        </div>
+                                        <div id="project3e" class="accord-collapse panel-collapse collapse">
+                                          <div class="panel-body no-padding">
+                                            <table class="table"> 
+                                            <tr class="animated flash">
+                                                <td class="text-center"><img src="img/tn_user_02.jpg" alt="User" class="img-circle nav-avatar"></td>
+                                                <td><a href="#"><strong>Jill Doe</strong><br>Finished task three and logged her weekly hours</a></td>
+                                                <td><a href="#" class="text-transparent"><span class="time">Just now</span></a></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center"><img src="img/tn_user_01.jpg" alt="User" class="img-circle nav-avatar"></td>
+                                                <td><a href="#"><strong>Micheal Anderson</strong><br>Asked a question about task five</a></td>
+                                                <td><A href="#" class="text-transparent"><span class="time">5 min ago</span></a></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center"><img src="img/tn_user_04.jpg" alt="User" class="img-circle nav-avatar"></td>
+                                                <td><a href="#"><strong>Hai Thatcher</strong><br>Closed tasks 6, 7, 8 and 9 and posted updates regarding task 10</a></td>
+                                                <td><A href="#" class="text-transparent"><span class="time">3:30 pm</span></a></td>
+                                            </tr>
+    
+                                        </table>
+                                          </div>
+                                        </div>
+                                  </div>
+                                  <!-- /bottom  panel -->
+							  </div><!-- panel / group -->
+                            </div><!-- /col & row-->
+                            <!-- / accordian 3-->      
+                         
+                           
+                    </div><!--/projects-->        
+                
+          </div><!-- /page-content-wrapper -->
+		</div><!-- / wrapper for content below nav bar -->
+
+	</div><!-- end container for chat panel push-->
+
+	
+   	    <!-- JavaScript -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <!-- Theme Core -->
+		<script src="assets/js/jquery.js"></script>
+    	<script src="assets/js/modernizr-2.6.2.min.js"></script>
+        <script src="dist/js/bootstrap.js"></script>
+        <script type="text/javascript" src="assets/js/jquery-ui-1.10.4.custom.min.js"></script>
+        
+        <!-- Preloader -->
+		<script>
+            $(window).load(function(){
+             $('.preloader-wrapper').fadeOut();
+            });
+        </script>
+	    <!-- Pushy JS --> 
+        <script src="assets/js/pushy.js"></script>
+
+        <!-- EzMark -->
+        <script src="assets/js/jquery.ezmark.js"></script>
+        <script type="text/javascript">
+			$(function() {
+				$('.custom-check input').ezMark()
+			});	
+		</script>
+
+                <!-- Datepicker -->
+		<script src="assets/plugins/datepicker/js/bootstrap-datepicker.js"></script>
+        <script>
+		$(function(){
+			$('#dp1').datepicker();
+			$('#dp2').datepicker();
+			$('#dp3').datepicker();
+			$('#dp3').datepicker();
+			 
+		});
+		</script>
+        <!-- Custom -->
+		<script src="assets/js/sidebar-navbar.js"></script>
+		<script src="assets/js/chart-data.js"></script>
+        <script src="assets/js/script.js"></script>
+	   
+
+</body>
+</html>

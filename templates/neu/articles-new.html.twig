@@ -1,0 +1,125 @@
+{% extends 'base.html.twig' %}
+{% block crumbs %}
+    <!-- page content header -->
+    <div class="row add-padding">
+        <div class="pull-left">
+            <h1>Текстовые материалы</h1>
+            <ol class="breadcrumb">
+                <li><a href="/admin" class="text-transparent"><i class="icon-home"></i> Главная</a></li>
+                <li><a href="/admin/{{ controller }}">Текстовые материалы</a></li>
+                <li class="active"><a href="/admin/{{ controller }}/{% if item.id != '' %}edit?id={{ item.id }}{% else %}new{% endif %}">Редактирование материала</a></li>
+            </ol>
+        </div>
+    </div><!-- / page content header -->
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-lg-4 col-md-offset-1">
+            <form enctype="multipart/form-data" action="/ru/admin/{{ controller }}/{% if item.id != '' %}save{% else %}new{% endif %}" method="post" name="form1" id="form1" class="form-horizontal" role="form">
+                <input type="hidden" name="id" value="{{ item.id }}"/>
+                <div class="form-group">
+                    <label for="menu">Название*</label>
+                    <input class="form-control" type="text" maxlength="255" size="100" value="{{ item.menu }}" id="menu" name="menu">
+                </div>
+                <div class="form-group">
+                    <label for="alias">Псевдоним</label>
+                    <input class="form-control" type="text" maxlength="255" size="100" value="{{ item.alias }}" id="alias" name="alias">
+                </div>
+                <div class="form-group"><label for="category">Категория материала</label>
+                    <select name="category" class="form-control">
+                        {% if item.id != '' %}
+                            {% for cat in categories %}
+                                <option {% if item.category == cat.id %}selected=""{% endif %} value="{{ cat.id }}">{{ cat.name }}</option>
+                            {% endfor %}
+                        {% else %}
+                            {% for cat in categories %}
+                                <option {% if current == cat.id %}selected=""{% endif %} value="{{ cat.id }}">{{ cat.name }}</option>
+                            {% endfor %}
+                        {% endif %}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="alias">Статус</label>
+                    <select class="form-control" size="1" name="status">
+                        {% if item.id != '' %}
+                            {% if item.status == 1 %}
+                                {% set active = 'selected="selected"' %}
+                            {% endif %}
+                            <option {% if item.status == 1 %}selected="selected" {% endif %}value="1">Опубликованно</option>
+                            <option {% if item.status == 0 %}selected="selected" {% endif %}value="0">Неопубликованно</option>
+                        {% else %}
+                            <option selected="selected" value="1">Опубликованно</option>
+                            <option value="0">Неопубликованно</option>
+                        {% endif %}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Изображения галереи</label>
+                    <div class="aux_images_new">
+                        <div class="aux-image">
+                            <input type="file" name="aux_images[]" class="img-field">
+                            <span class="delimg"><a href="#del">Удалить</a></span>
+                        </div>
+                        <div id="imgcontrols"><span class="newimg"><a href="#new">Добавить</a></span></div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    {% for img in aux_images %}
+                        <img src="/images/{{ controller }}/thumbs/{{ img.thumb }}" alt="{{ item.name }}"/>
+                    {% else %}
+                    {% endfor %}
+                </div>
+                <div class="form-group">
+                    <label for="name">Заголовок</label>
+                    <input class="form-control" type="text" maxlength="255" size="100" value="{{ item.name }}" id="name" name="name">
+                </div>
+                <div class="form-group">
+                    <label for="text">Текст статьи</label>
+                    <textarea class="form-control" rows="5" cols="45" id="text" name="text" >{{ item.text }}</textarea>
+                </div>
+                <div class="form-group">
+                    <h2>SEO</h2>
+                    <label for="seotitle">Заголовок браузера</label>
+                    <input class="form-control" type="text" maxlength="255" size="100" value="{{ item.seotitle }}" id="seotitle" name="seotitle">
+                </div>
+                <div class="form-group">
+                    <label for="seokeys">Ключевые слова</label>
+                    <textarea class="form-control" rows="5" cols="100" id="seokeys" name="seokeys">{{ item.seokeys }}</textarea>
+                </div>
+                <div class="form-group">
+                    <label for="seodescription">Meta-Description</label>
+                    <textarea class="form-control" rows="5" cols="100" id="seodescription" name="seodescription">{{ item.seodescription }}</textarea>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input class="btn btn-primary btn-lg" type="submit" value="{% if item.id != '' %}Сохранить{% else %}Создать{% endif %}" id="submit" name="confirm">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <a class="btn btn-secondary right" href="/{{ lang }}/admin/{{ controller }}"><i class="ui-icon-cancel"></i> Отмена </a>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block script %}
+    <script>
+        $(window).load(function(){
+            adminimg();
+            tinymce.init({
+                selector: ".text",
+                plugins: "code visualblocks link image jbimages",
+                toolbar: 'undo redo | bold italic  underline strikethrough outdent indent cut copy paste selectall removeformat blockquote bullist alignleft aligncenter alignright alignjustify | code | visualblocks link image jbimages',
+                menu : 'newdocument undo redo visualaid cut copy paste selectall bold italic underline strikethrough subscript superscript removeformat formats',
+                height : 300,
+                relative_urls: false
+            });
+    });
+    </script>
+{% endblock %}

@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>Neu v1.0  |  Responsive Admin Skin</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="dist/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Boostrap Theme -->
+    <link href="css/skin.css" rel="stylesheet">
+    <link href="css/boostrap-overrides.css" rel="stylesheet">
+    <link href="css/theme.css" rel="stylesheet">
+        
+    <!-- Add custom CSS here -->
+    <link href="css/main-nav-horizontal.css" rel="stylesheet">
+    
+    <!-- Plugins -->
+    <link href="assets/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/ezmark.css">
+    <link href="assets/plugins/morris.js-0.4.3/morris.css" rel="stylesheet">
+    <link href="assets/css/animate-custom.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="assets/plugins/calendar/zabuto_calendar.css">
+	<link rel="stylesheet" type="text/css" href="assets/plugins/jquery-easy-pie-chart/jquery.easy-pie-chart.css">
+	<link href="assets/css/pushy.css" rel="stylesheet">
+
+   <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+        <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+	
+    
+</head>
+<body  onload="initPieChart();">
+
+
+    <!-- Slide out chat panel -->
+    <nav class="pushy pushy-right">
+        <div class="well-lg no-radius">
+            <i class="icon-group"></i>&nbsp;&nbsp;&nbsp;<strong>Chat</strong>&nbsp;&nbsp;<span class="text-transparent">(4)</span>
+            <a href="javascript:;" class="close-chat-panel" data-dismiss="panel" aria-hidden="true"><i class="icon-remove pull-right text-transparent"></i></a>
+			<br><br><div class="input-group inverse input-group-sm no-padding">
+                      <span class="input-group-addon"><i class="icon-search text-transparent"></i></span>
+                      <input type="text" class="form-control" placeholder="Search">
+            </div>
+           <div class="clearfix"></div>
+        </div>
+        <ul class="chat align-center-vert-alt">
+            <li>
+            	<a href="#"><img src="img/tn_user_07.jpg" alt="User" class="img-circle user-thumbnail-xs"></a>
+            	<small><a href="#"> Amin Bhatnagar<span class="text-online pull-right"><i class="icon-circle text-online "></i></span></a></small>
+                <div class="clearfix"></div>
+            </li>
+            <li>
+            	<a href="#" class="pull-left"><img src="img/tn_user_02.jpg" alt="User" class="img-circle user-thumbnail-xs"></a>
+            	<small><a href="#">Gina Wheeling<span class="text-online pull-right"><i class="icon-circle text-online "></i></span></a></small>
+                <div class="clearfix"></div>
+            </li>
+            <li>
+            	<a href="#" class="pull-left"><img src="img/tn_user_03.jpg" alt="User" class="img-circle user-thumbnail-xs"></a>
+            	<small><a href="#">Ryan Smith<span class="text-online pull-right"><i class="icon-circle text-online "></i></span></a></small>
+                <div class="clearfix"></div>
+            </li>
+            <li>
+            	<a href="#" class="pull-left"><img src="img/tn_user_04.jpg" alt="User" class="img-circle user-thumbnail-xs"></a>
+            	<small><a href="#">Hai Thatcher<span class="text-online pull-right"><i class="icon-circle text-online "></i></span></a></small>
+                <div class="clearfix"></div>
+            </li>
+            <li>
+            	<a href="#" class="pull-left"><img src="img/tn_user_05.jpg" alt="User" class="img-circle user-thumbnail-xs"></a>
+            	<small><a href="#">Jane Doe<span class="text-online pull-right"><i class="icon-circle text-danger"></i></span></a></small>
+                <div class="clearfix"></div>
+            </li>
+           <li>
+            	<a href="#" class="pull-left"><img src="img/tn_user_06.jpg" alt="User" class="img-circle user-thumbnail-xs"></a>
+            	<small><a href="#">Carson Winters<span class="text-online pull-right"><i class="icon-circle text-danger "></i></span></a></small>
+                <div class="clearfix"></div>
+            </li>
+            <li class="idle">
+            	<a href="#" class="pull-left"><img src="img/tn_user_01.jpg" alt="User" class="img-circle user-thumbnail-xs"></a>
+            	<small><a href="#">Peyton Max <span class="pull-right"><i class="icon-circle"></i></span></a></small>
+                <div class="clearfix"></div>
+            </li>
+            <li class="idle">
+            	<a href="#" class="pull-left"><img src="img/tn_user_05.jpg" alt="User" class="img-circle user-thumbnail-xs"></a>
+            	<small><a href="#">Brianna Winters<span class="pull-right"><i class="icon-circle"></i></span></a></small>
+                <div class="clearfix"></div>
+            </li>
+            <li class="idle">
+            	<a href="#" class="pull-left"><img src="img/tn_user_03.jpg" alt="User" class="img-circle user-thumbnail-xs"></a>
+            	<small><a href="#">Micheal Anderson<span class="pull-right"><i class="icon-circle"></i></span></a></small>
+                <div class="clearfix"></div>
+            </li>
+        </ul>
+    </nav>
+
+
+  <!-- Container for chat panel push-->
+  <div id="container"> 
+   <!-- Top Navbar  -->
+        <div id="top-navbar" class="navbar navbar-static-top navbar-default navbar-inverse add-shadow" role="navigation">
+            <div class="navbar-header text-center">
+                <button type="button" class="navbar-toggle border-left-med no-radius" data-toggle="collapse"  data-target="#horizontal-nav">
+                <div class="bars">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </div>
+                </button>
+                <button type="button" class="navbar-toggle border-left-med no-radius" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="avatar"><img src="img/avatar.jpg" alt="Ryan" class="img-circle"></span>
+                </button>
+                <!-- logo -->
+                <div class="navbar-brand"><a href="index.html"> <img src="img/logo.png" alt="logo"></a></div>
+                <!-- / logo -->
+            </div>
+            <!-- user -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav navbar-right navbar-user">
+                    <!-- new messages -->
+                    <li class="dropdown messages-dropdown">
+                        <a href="#" class="dropdown-toggle announcements" data-toggle="dropdown"><i class="icon-envelope-alt"></i><span class="badge">23</span></a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-header header-inverse"><i class="icon-envelope"></i>23 New Messages</li>
+                            <li class="message-preview">
+                                    <a href="#">
+                                    <img src="img/tn_user_02.jpg" alt="User" class="img-circle user-thumbnail-xs">
+                                    <span class="name pull-left">Maya Smith</span>
+                                    <span class="label label-primary pull-right">Just Now</span><br>
+                                    <span class="message text-transparent">Hi Ryan, I received a message from quis...</span>
+                                    </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li class="message-preview">
+                                <a href="#">
+                                <img src="img/tn_user_01.jpg" alt="User" class="img-circle user-thumbnail-xs">
+                                <span class="name pull-left">James Doe</span>
+                                <span class="time pull-right text-transparent"><i class="icon-time"></i> 4:34 PM</span><br>
+                                <span class="message text-transparent">Good Afternoon Ryan, Were you able to...</span>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li class="message-preview">
+                                <a href="#">
+                                <img src="img/tn_user_04.jpg" alt="User" class="img-circle user-thumbnail-xs">
+                                <span class="name pull-left">Benjamin Taylor</span>
+                                <span class="time pull-right text-transparent"><i class="icon-time"></i> 1:56 PM</span><br>
+                                <span class="message text-transparent">Hey, Can you give me a call when you get a...</span>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li class="dropdown-footer text-center">
+                                <a href="#">
+                                See all new messages
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- alerts -->
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle announcements" data-toggle="dropdown">
+                        <i class="icon-flag-alt"></i><span class="badge animated-delay flash">12</span></a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-header header-inverse"><i class="icon-star"></i>12 Notifications </li>
+                            <li class="notification">
+                                <a href="#">
+                                <span class="pull-left"><span class="label label-success"><i class="icon-comment"></i></span>  New Comment</span>
+                                <span class="time pull-right text-transparent">Just Now</span><br>
+                                </a>
+                            </li>
+                            <li class="notification">
+                                <a href="#">
+                                <span class="pull-left"><span class="label label-success"><i class="icon-comment"></i></span>  New Comment</span>
+                                <span class="time pull-right text-transparent">5 Minutes Ago</span><br>
+                                </a>
+                            </li>
+                            <li class="notification">
+                                <a href="#">
+                                <span class="pull-left"><span class="label label-primary"><i class="icon-user"></i></span>  12 New Users</span>
+                                <span class="time pull-right text-transparent">23 Minutes ago</span><br>
+                                </a>
+                            </li>
+                            <li class="notification">
+                                <a href="#">
+                                <span class="pull-left"><span class="label label-danger"><i class="icon-flag"></i></span>  Canceled Transaction</span>
+                                <span class="time pull-right text-transparent">12 Hours Ago</span><br>
+                                </a>
+                            </li>
+                            <li class="notification">
+                                <a href="#">
+                                <span class="pull-left"><span class="label label-warning"><i class="icon-shopping-cart"></i></span>  Canceled Transaction</span>
+                                <span class="time pull-right text-transparent">Yesterday</span><br>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li class="dropdown-footer text-center">
+                                <a href="#">
+                                See all notifications
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown alerts-dropdown">
+                        <a href="#" class="dropdown-toggle announcements" data-toggle="dropdown"><i class="icon-bar-chart"></i><span class="badge">56</span></a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-header header-inverse"><i class="icon-bar-chart"></i>6 Pending Tasks </li>
+                            <li>
+                                <a href="javascript:void(0);">
+                                    <span class="task">
+                                    <span class="desc">November orders </span>
+                                    </span>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);">
+                                    <span class="task">
+                                    <span class="desc">Invoices paid</span>
+                                    </span>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-success"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width:65%">
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);">
+                                    <span class="task">
+                                    <span class="desc">Updates</span>
+                                    </span>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-warning"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width:35%">
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);">
+                                    <span class="task">
+                                    <span class="desc">Unread emails</span>
+                                    </span>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-danger"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width:15%">
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li class="dropdown-footer text-center">
+                                <a href="#">
+                                See all tasks
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                    	<a href="#"><div class="menu-btn"><i class="icon-comment-alt"></i><span class="badge">2</span></div></a>
+                      
+                    </li>
+                    <li class="avatar dropdown user-dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="img/avatar.jpg" alt="Ryan" class="img-circle nav-avatar">Welcome Ryan!<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="user-profile.html"><i class="icon-user"></i> Profile</a></li>
+                            <li><a href="email.html"><i class="icon-envelope"></i> Inbox</a></li>
+                            <li><a href="#"><i class="icon-gear"></i> Settings</a></li>
+                            <li class="divider"></li>
+                            <li><a href="login.html"><i class="icon-power-off"></i> Log Out</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!-- / nav-collapse -->
+        </div><!-- / top Navbar -->
+        
+        <!-- Primary navigation -->
+        <div id="horizontal-nav" class="navbar collapse navbar-collapse navbar-inverse gray-darker-bg">
+            <ul class="navbar-nav">
+              <li>
+                 
+                 	<a href="index.html">
+                 		<span class="menu-item">
+                        	<span class="icon icon-dashboard"></span>
+                 			<span class="hor-menu-item-text">Dashboard</span>
+                 		</span>
+                    </a>
+                 
+              </li>
+              <li>
+                 	<a href="email.html">
+                 	   <span class="menu-item">
+                            <span class="icon icon-envelope-alt"></span>
+                 			<span class="hor-menu-item-text">Email</span> <span class="responsive-hide badge">103</span>
+ 					   </span>                	
+                    </a>
+                 </span>
+              </li>
+              <li class="dropdown">
+              	<a href="#" class="active-title dropdown-toggle" data-toggle="dropdown">
+             	   <span class="menu-item">
+                   		<span class="icon icon-copy"></span><span class="hor-menu-item-text">Layouts<b class="caret"></b></span></span></a>  
+                   
+                   <ul class="dropdown-menu">
+                        <li><a href="boxedlayout.html">Boxed Layout</a></li>
+                        <li><a href="horizontal-nav.html">Horizontal</a></li>
+                        <li><a href="skin-opt-1.html">Sample Skin</a></li>
+                    </ul>
+              </li>
+              <li class="dropdown">
+              	<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+             	                    <span class="menu-item">
+                                    	<span class="icon icon-tablet"></span><span class="hor-menu-item-text">UI Set<b class="caret"></b></span></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="buttons.html">Buttons</a></li>
+                        <li><a href="typography.html">Typography</a></li>
+                        <li><a href="modals.html">Modal</a></li>
+                        <li><a href="panels.html">Panels</a></li>
+                        <li><a href="tabs.html">Tabs & Accordions </a></li>
+                        <li><a href="sliders.html">Sliders</a></li>
+                        <li><a href="notifications.html">Notifications</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+              	<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+             	           <span class="menu-item">
+                                <span class="icon icon-copy"></span><span class="hor-menu-item-text">Pages<b class="caret"></b></span>
+ 							</span>                  
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="user-profile.html">User Profile</a></li>
+                         <li><a href="login.html">Login</a></li>
+                         <li><a href="register.html">Register</a></li>
+                         <li><a href="404.html">404 Page</a></li><li><a href="500.html">500 Page</a></li>
+                         <li><a href="lock.html">Lock Screen</a></li><li><a href="message.html">Send Message</a></li>
+                         <li><a href="fileupload.html">File Upload</a></li>
+                         <li><a href="timeline.html">Timeline</a></li>
+                    </ul>
+                </li>
+                 <li class="dropdown">
+              	<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+             	                    <span class="menu-item">
+                                    	<span class="icon icon-table"></span><span class="hor-menu-item-text">Tables<b class="caret"></b></span></a></span>
+                    <ul class="dropdown-menu">
+                        <li><a href="basic.html">Basic</a></li>
+                        <li><a href="data.html">Data</a></li>
+                    </ul>
+                 </li>
+                 <li>
+                    <a href="charts.html">
+                                     <span class="menu-item">
+                                     	<span class="icon icon-bar-chart"></span>
+                    					<span class="hor-menu-item-text">Charts</span>
+                                     </span>   
+                     </a>                        	 					 
+                 </li>
+                 <li>
+                    <a href="map.html">
+                    	<span class="menu-item">
+                        	<span class="icon icon-map-marker"></span>
+                    		<span class="hor-menu-item-text">Map</span>
+                       </span>     
+                    </a>            
+             	 </li>
+                 <li>
+                    <a href="calendar.html">
+                    	<span class="menu-item">	
+                       		<span class="icon icon-calendar"></span>
+                    		<span class="hor-menu-item-text">Calendar</span>
+                    	</span>
+                    </a>            
+             	 </li>
+                 <li>
+                    <a href="project-manager.html">
+                     <span class="menu-item">
+                     	<span class="icon icon-edit"></span>
+                    	<span class="hor-menu-item-text">Projects</span>
+                      </span>
+                    </a>            
+             	 </li>
+               </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+		
+        <!-- Wrapper for content below nav bar -->
+        <div id="wrapper">
+          <!-- Keep all page content within the page-content-wrapper -->
+          <div id="page-content-wrapper" class=" animated-med-delay fadeInRight">
+                    <!-- page content header -->
+                    <div class="row add-padding">
+                            <div class="pull-left">
+                                <h1>Good Morning Ryan</h1>
+                                <ol class="breadcrumb">
+                                    <li><a href="index.html" class="text-transparent">Dashboard</a></li>
+                                    <li><a href="index.html" class="text-transparent">Stats</a></li>
+                                    <li class="active"><a href="index.html" class="text-transparent">Daily</a></li>
+                            	</ol>
+                            </div>
+                    </div>
+                    <!-- / page content header -->
+                    <!--Page Content-->
+                    <!-- Stats & Updates Row 1-->
+                        <div class="row no-padding">
+                        	<!--row 1, col 1-->
+                            <div class="col-md-3 col-sm-6">
+                             	<div class="panel panel-body-only panel-secondary-solid">
+                               		<div class="panel-body">
+                                        <div class="pull-left">
+                                        	<div class="badge-circle daily-stat-left"><div class="big-text"><i class="icon-user"></i></div></div>							
+                                        </div>
+                                        <span id="new-comments" class="big-text"></span>
+                                            <div class="stat text-transparent">
+                                                 <h5>New Users </h5>
+                                            </div> 
+                                    </div>
+                                </div>
+                            </div><!--/ row 1, col 1-->
+                            <!--row 1, col 2-->
+                            <div class="col-md-3 col-sm-6">
+                             	<div class="panel panel-body-only panel-warning-solid">
+                               		<div class="panel-body">
+                                        <div class="pull-left">
+                                        	<div class="badge-circle daily-stat-left"><div class="big-text"><i class="icon-comment"></i></div></div>							
+                                        </div>
+                                        <span id="new-users" class="big-text"></span>
+                                            <div class="stat text-transparent">
+                                                 <h5>Comments </h5>
+                                            </div> 
+                                    </div>
+                                </div>
+                            </div><!--/ row 1, col 2-->
+                            <!--row 1, col 3-->
+                            <div class="col-md-3 col-sm-6">
+                            	<div class="panel panel-body-only panel-primary-solid">
+                               		<div class="panel-body">
+                                        <div class="pull-left">
+                                        	<div class="badge-circle daily-stat-left"><div class="big-text"><i class="icon-rss"></i></div></div>							
+                                        </div>
+                                        <span id="new-subscribers" class="big-text"></span>
+                                            <div class="stat text-transparent">
+                                                 <h5>Subscribers </h5>
+                                            </div> 
+                                    </div>
+                                </div>
+                            </div><!--/ row 1, col 3-->
+                            <!--row 1, col 4-->
+                            <div class="col-md-3 col-sm-6">
+                            	<div class="panel panel-body-only panel-info-solid">
+                               		<div class="panel-body">
+                                        <div class="pull-left">
+                                        	<div class="badge-circle daily-stat-left"><div class="big-text"><i class="icon-shopping-cart"></i></div></div>							
+                                        </div>
+                                        <span id="new-orders" class="big-text"></span>
+                                            <div class="stat text-transparent">
+                                                 <h5>Pending Orders </h5>
+                                            </div> 
+                                    </div>
+                                </div>
+                            </div><!--/ row 1, col 4-->
+                        </div><!--/ row-->
+                    <!--/ Stats & Updates Row 1-->
+                    
+                     <!-- Stats & Updates Row 2-->
+                   		<!--row-->
+                        <div class="row no-padding">
+                        	<!--col 1-->
+                            <div class="col-md-4">
+                             	<div class="panel panel-body-only panel-white-solid">
+                               		<div class="panel-body">
+                                         	 <a href="#" class="pull-left text-transparent"><h5>Server</h5></a>
+                                             <div class="pull-right text-transparent"><h4>220/250 GB</h4></div>
+                                             <div class="clearfix"></div>
+                                             <div class="progress progress-striped active">
+                                                  <div class="progress-bar progress-bar-gray"  role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:60%"></div>
+                                             </div>
+                                    </div>
+                                </div>
+                            </div><!--/ col 1-->
+                            <!--col 2-->
+                            <div class="col-md-4">
+                             	<div class="panel panel-body-only panel-white-solid">
+                               		<div class="panel-body">
+                                         	 <a href="#" class="pull-left text-transparent"><h5>Inbox</h5></a>
+                                             <div class="pull-right text-transparent"><h4>100/250 GB</h4></div>
+                                             <div class="clearfix"></div>
+                                             <div class="progress progress-striped active">
+                                                  <div class="progress-bar progress-bar-gray"  role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%"></div>
+                                             </div>
+                                    </div>
+                                </div>
+                            </div><!--/  col 2-->
+                            <!--col 3-->
+                            <div class="col-md-4">
+                            	<div class="panel panel-body-only panel-white-solid">
+                               		<div class="panel-body">
+                                         	 <a href="#" class="pull-left text-transparent"><h5>Storage</h5></a>
+                                             <div class="pull-right text-transparent"><h4>200/250 GB</h4></div>
+                                             <div class="clearfix"></div>
+                                             <div class="progress progress-striped active">
+                                                  <div class="progress-bar progress-bar-gray"  role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" style="width:55%"></div>
+                                             </div>
+                                    </div>
+                                </div>
+                            </div><!--/ col 3-->
+                        </div><!--/ row-->
+                    <!--/ Stats & Updates Row 2-->
+                    
+                    <!--Stats & Updates Row 3 -->
+                    <div class="row no-padding">
+						<!-- Flot Realtime  -->
+                                   <div class="col-md-8">
+                                        <div class="panel">
+                                            <div class="panel-heading">
+                                                <div class="pull-left"><h4><i class="icon-sitemap"></i> Monthly Traffic Stats</h4></div>
+                                                <div class="tools pull-right">
+                                                    <a href="#"><i class="icon-refresh text-transparent"></i></a>
+                                                    <a href="javascript:;" class="close-panel" data-dismiss="panel" aria-hidden="true"><i class="icon-remove text-transparent"></i></a>
+                                                 </div>
+                                                 <div class="clearfix"></div>
+                                            </div>
+                                            <div class="panel-body no-padding">
+                                            <!-- realtime chart  -->
+                                            	<div id="content">
+                                                    <div class="demo-container">
+                                                        <div id="placeholder" class="demo-placeholder"></div>
+                                                    </div>
+                                            	</div><!-- / realtime chart  -->
+                                            
+                                            </div>
+                                            <div class="panel-footer">
+                                            	<a href="#"><small>VIEW ALL</small></a> 
+                                    			<a href="#"><div class="pull-right"><i class="icon-circle-arrow-right"></i></div></a> 
+                                            </div>
+                                       </div>
+                                  </div>
+
+                        <div class="col-md-4">
+                            <!-- inner col 1 --><!-- todo -->
+                            <div class="panel panel-white-solid">
+                            	<div class="panel-heading">
+                                        <div class="pull-left"><h4><i class="icon-tasks"></i> Todo List</h4></div>
+                                        <div class="tools pull-right">
+                                        <a href="#"><i class="icon-refresh text-transparent"></i></a>
+                                        <a href="javascript:;" class="close-panel" data-dismiss="panel" aria-hidden="true"><i class="icon-remove text-transparent"></i></a>
+                                        </div>
+                                        <div class="clearfix"></div>
+                             	</div>
+                            	 <div class="panel-body custom-check">
+                             			<div class="table-responsive table-no-border">
+                                                     <table id="todo" class="table table-hover custom-check table-striped ">
+                                                      <tbody>
+                                                        <tr>
+                                                            <td class="tools">
+                                                                <span class="check"><input type="checkbox" class="checked"></span>
+                                                                <a href="#">Meet with Arin</a>
+                                                                <a class="close no-padding-right" aria-hidden="true" data-dismiss="alert"><i class="icon-remove"></i></a>
+                                                                <a href="#" class="text-transparent pull-right"><i class="icon-ok text-transparent "></i></a>
+                                                                <a href="#" class="text-transparent pull-right"><i class="icon-pencil text-transparent "></i></a> 
+                                                                
+															</td>
+                                                            
+                                                        </tr>
+                                                        <tr>
+                                                   			<td class="tools">
+                                                                <span class="check"><input type="checkbox" class="checked"></span>
+                                                                <a href="#">Send invoice</a>
+                                                                <a class="close no-padding-right" aria-hidden="true" data-dismiss="alert"><i class="icon-remove"></i></a>
+                                                                <a href="#" class="text-transparent pull-right"><i class="icon-ok text-transparent "></i></a>
+                                                                <a href="#" class="text-transparent pull-right"><i class="icon-pencil text-transparent "></i></a> 
+                                                                
+															</td>
+                                                        </tr>
+                                                        <tr>
+                                                   			<td class="tools">
+                                                                <span class="check"><input type="checkbox" class="checked"></span>
+                                                                <a href="#">Check messages</a>
+                                                                <a class="close no-padding-right" aria-hidden="true" data-dismiss="alert"><i class="icon-remove"></i></a>
+                                                                <a href="#" class="text-transparent pull-right"><i class="icon-ok text-transparent "></i></a>
+                                                                <a href="#" class="text-transparent pull-right"><i class="icon-pencil text-transparent "></i></a> 
+                                                                
+															</td>
+                                                        </tr>
+                                                        <tr>
+                                                    		<td class="tools">
+                                                                <span class="check"><input type="checkbox" class="checked"></span>
+                                                                <a href="#">Pay bills</a>
+                                                                <a class="close no-padding-right" aria-hidden="true" data-dismiss="alert"><i class="icon-remove"></i></a>
+                                                                <a href="#" class="text-transparent pull-right"><i class="icon-ok text-transparent "></i></a>
+                                                                <a href="#" class="text-transparent pull-right"><i class="icon-pencil text-transparent "></i></a> 
+                                                                
+															</td>
+                                                        </tr>
+                                                        <tr>
+                                                    		<td class="tools">
+                                                                <span class="check"><input type="checkbox" class="checked"></span>
+                                                                <a href="#">Schedule site </a>
+                                                                <a class="close no-padding-right" aria-hidden="true" data-dismiss="alert"><i class="icon-remove"></i></a>
+                                                                <a href="#" class="text-transparent pull-right"><i class="icon-ok text-transparent "></i></a>
+                                                                <a href="#" class="text-transparent pull-right"><i class="icon-pencil text-transparent "></i></a> 
+                                                                
+															</td>
+                                                         </tr>
+                                                      </tbody>
+                                                  </table>
+                                                 </div>
+                             	</div>
+                                       <div class="panel-footer">
+                                            <button class="btn btn-inverse btn-xs"><span class="pull-left"><i class="icon-plus"></i>&nbsp;&nbsp;Add Task</span></button>
+                                            <a href="#"><div class="pull-right text-transparent"><i class="icon-circle-arrow-right"></i></div></a>
+                                            <div class="clearfix"></div>
+                                       </div>
+                             </div>
+                             <!-- / todo -->
+                        </div>
+                    </div><!--/ stats & updates row 3 -->
+                    <!-- Stats & Updates Row 4 -->
+                    <div class="row no-padding">
+                     <!-- Weekly traffic stats -->
+                        <div class="col-md-8">
+                            <div class="panel">
+ 											<div class="panel-heading">
+                                                <div class="pull-left"><h4><i class="icon-signal"></i> Recent Activity</h4></div>
+                                                <div class="tools pull-right">
+                                                    <a href="#"><i class="icon-refresh text-transparent"></i></a>
+                                                    <a href="javascript:;" class="close-panel" data-dismiss="panel" aria-hidden="true"><i class="icon-remove text-transparent"></i></a>
+                                                 </div>
+                                                 <div class="clearfix"></div>
+                                            </div>
+                                <div class="clearfix"></div>
+                                <div class="brand-primary-bg panel-body ">
+                                    <!-- graph -->
+                                    <div id="weeklysales"  class="submenu" style="height:242px;"></div> <!-- /graph -->
+                                </div>
+                                <div class="brand-primary-bg panel-footer"></div>
+                            </div>
+                            <!-- / panel -->
+                        </div><!-- / weekly traffics stats -->
+                        <!-- Calendar-->
+                        <div class="col-md-4 col-sm-12">
+                                <div id="calendar">
+                                    <div class="panel panel-med-gray-solid">
+                                        <div class="panel-body no-padding add-radius">
+                                            <div id="date-popover" class="popover top" style="cursor: pointer; disadding: block; margin-left: 33%; margin-top: -50px; width: 175px;">
+                                                <div class="arrow"></div>
+                                                <h3 class="popover-title" style="disadding: none;"></h3>
+                                                <div id="date-popover-content" class="popover-content"></div>
+                                            </div>
+                                            <div id="my-calendar"></div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- / calendar -->
+                    </div><!-- / Stats & Updates Row 4 -->
+                    
+                    
+                    <!-- Stats & Updates Row 5 -->
+                    <div class="row no-padding">
+                    <!--Map-->
+                      <div class="col-md-8">
+                      	<div class="panel">
+                        	    <div class="panel-heading">
+                                    <div class="pull-left"><h4><i class="icon-location-arrow"></i> Recent Visits</h4></div>
+                                    <div class="tools pull-right">
+                                    <a class="btn btn-inverse btn-xs">Visits</a>
+                                    <a class="btn btn-inverse btn-xs disabled">Orders</a>&nbsp;&nbsp;&nbsp;
+                                    <a href="#"><i class="icon-refresh text-transparent"></i></a>
+                                    <a href="javascript:;" class="close-panel" data-dismiss="panel" aria-hidden="true"><i class="icon-remove text-transparent"></i></a>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                           <!-- google map -->
+                           <div class="panel-body no-padding">
+                                <section id="map">
+                                    <div id="my-map"></div>
+                                </section>
+                            </div><!--/ google map-->
+                            <div class="panel-footer text-center">
+                                   <div class="col-md-3 col-xs-6">
+									<p><strong>Hits 2013</strong></p>
+									<span class="sparkline">&nbsp;</span>
+								   </div>
+                                   <div class="col-md-3 col-xs-6">
+									<p><strong>Hits 2012</strong></p>
+									<div class="sparkline2"></div>
+								   </div>
+                                   <div class="col-md-3 col-xs-6">
+									<p><strong>Hits 2011</strong></p>
+									<span class="sparkline">&nbsp;</span>
+								   </div>
+                                   <div class="col-md-3 col-xs-6">
+									<p><strong>Hits 2010</strong></p>
+									<span class="sparkline2">&nbsp;</span>
+								   </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                      </div><!--/map-->
+                       <!-- Easy Pie Charts-->
+                      <div id="pie-charts" class="col-md-4">
+                      	<div class="panel">
+                        	    <div class="panel-heading">
+                                    <div class="pull-left"><h4><i class="icon-ok-sign"></i> Views</h4></div>
+                                    <div class="tools pull-right">
+                                    <a href="#"><i class="icon-refresh text-transparent"></i></a>
+                                    <a href="javascript:;" class="close-panel" data-dismiss="panel" aria-hidden="true"><i class="icon-remove text-transparent"></i></a>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            <div class="panel-body">
+                            	<div class="row col-lg-12 no-padding no-margin">
+                                         <div class="pull-left">
+                                            <div class="no-padding"><h5 class="no-margin">No. of Views</h5></div>
+                                            <div class="no-padding"><h3><i class="icon-arrow-up text-transparent"></i>&nbsp;<strong>6%</strong></h3></div>
+                                         </div>
+                                         
+                                </div>
+                                <div class="col-lg-12 text-center">
+                                	 <div class="chart">
+                                        <div class="percentage-light" data-percent="75"><span class="text-transparent">75%</span></div>
+                                     </div>
+                                </div>
+                                <div style="clear:both;"></div>
+                                <div class="row col-lg-12 no-padding no-margin">
+                                         <div class="pull-left">
+                                            <div class="no-padding"><h5 class="no-margin">No. of Views</h5></div>
+                                            <div class="no-padding"><h3><i class="icon-arrow-down text-transparent"></i>&nbsp;<strong>12%</strong></h3></div>
+                                         </div>
+                                         
+                                </div>
+                                <div class="col-lg-12 text-center">
+                                    <div class="chart">
+                                        <div class="percentage-light" data-percent="52"><span class="text-transparent">52%</span></div>
+                                    </div>
+                                </div>
+                                <div style="clear:both;"></div>
+                            </div>
+                            <div class="panel-footer">
+                            	<span class="btn btn-sm btn-secondary">See All Sales</span>
+                                <ul class="list-inline pull-right text-transparent icons-medium">
+                                        <li><a href="#"><i class="icon-heart"></i></a></li>
+                                        <li class=""><a href="#"><i class="icon-twitter"></i></a></li>
+                                        <li class=""><a href="#"><i class="icon-facebook"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                      </div><!--/end easy pie charts-->
+                    </div><!--/ stats & updates row 5 -->
+ 
+                
+           </div><!-- /page-content-wrapper -->
+		</div><!-- / wrapper for content below nav bar -->
+
+	</div><!-- end container for chat panel push-->
+
+	
+   	        <!-- JavaScript -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <!-- Theme Core -->
+		<script src="assets/js/jquery.js"></script>
+    	<script src="assets/js/modernizr-2.6.2.min.js"></script>
+        <script src="dist/js/bootstrap.js"></script>
+        <script type="text/javascript" src="assets/js/jquery-ui-1.10.4.custom.min.js"></script>
+        
+		<script src="assets/js/script.js"></script>
+        
+        <!-- Pushy JS --> 
+        <script src="assets/js/pushy.js"></script>
+        
+		<!-- Skycons --> 
+		<script src="assets/js/skycons.js"></script>
+        <script>
+		  var icons = new Skycons(),
+			  list  = [
+				"clear-day", "clear-night", "partly-cloudy-day",
+				"partly-cloudy-night", "cloudy", "rain", "sleet", "snow", "wind",
+				"fog"
+			  ],
+			  i;
+	
+		  for(i = list.length; i--; )
+			icons.set(list[i], list[i]);
+	
+		  icons.play();
+		</script>
+        
+        <!-- Zabuto Calendar -->
+		<script src="assets/plugins/calendar/zabuto_calendar.js"></script>
+		<script type="application/javascript">
+                                        $(document).ready(function () {
+                                            $("#date-popover").popover({html: true, trigger: "manual"});
+                                            $("#date-popover").hide();
+                                            $("#date-popover").click(function (e) {
+                                                $(this).hide();
+                                            });
+                                        
+                                            $("#my-calendar").zabuto_calendar({
+                                                action: function () {
+                                                    return myDateFunction(this.id, false);
+                                                },
+                                                action_nav: function () {
+                                                    return myNavFunction(this.id);
+                                                },
+                                                ajax: {
+                                                    url: "show_data.php?action=1",
+                                                    modal: true
+                                                },
+                                                legend: [
+                                                    {type: "text", label: "Special event", badge: "00"},
+                                                    {type: "block", label: "Regular event", }
+                                                ]
+                                            });
+                                        });
+                                        
+                                        function myDateFunction(id, fromModal) {
+                                            $("#date-popover").hide();
+                                            if (fromModal) {
+                                                $("#" + id + "_modal").modal("hide");
+                                            }
+                                            var date = $("#" + id).data("date");
+                                            var hasEvent = $("#" + id).data("hasEvent");
+                                            if (hasEvent && !fromModal) {
+                                                return false;
+                                            }
+                                            $("#date-popover-content").html('You clicked on date ' + date);
+                                            $("#date-popover").show();
+                                            return true;
+                                        }
+                                        
+                                        function myNavFunction(id) {
+                                            $("#date-popover").hide();
+                                            var nav = $("#" + id).data("navigation");
+                                            var to = $("#" + id).data("to");
+                                            console.log('nav ' + nav + ' to: ' + to.month + '/' + to.year);
+                                        }
+                                    </script>
+        
+
+        
+
+         
+        <!-- Sparkline -->
+		<script src="assets/js/jquery.sparkline.js"></script>
+        
+        <!-- EzMark -->
+        <script src="assets/js/jquery.ezmark.js"></script>
+        <script type="text/javascript">
+			$(function() {
+				$('.custom-check input').ezMark()
+			});	
+		</script>
+        
+        <!-- Morris Chart -->
+        <script src="assets/plugins/morris.js-0.4.3/morris.js"></script>
+        <script src="assets/js/rap2AC.js"></script>
+	
+        <!-- Custom -->
+		<script src="assets/js/sidebar-navbar.js"></script>
+		<script src="assets/js/chart-data.js"></script>
+                
+        <!-- Google Maps -->
+		<script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+		<script type="text/javascript" src="assets/js/gmap3.js"></script>  
+        <script src="assets/js/gmap.custom-index-map.js"></script>
+        
+        <!-- Font Awesome Markers -->
+		<script src="assets/plugins/fontawesome-markers-master/fontawesome-markers.js"></script>
+        
+        <!-- Easy Pie Charts -->
+		<script type="text/javascript" src="assets/plugins/jquery-easy-pie-chart/examples/excanvas.js"></script>
+        <script type="text/javascript" src="assets/plugins/jquery-easy-pie-chart/jquery.easy-pie-chart.js"></script>
+	   
+	    <!-- Preloader -->
+		<script>
+            $(window).load(function(){
+             $('.preloader-wrapper').fadeOut();
+            });
+        </script>
+        
+        <!-- Flot -->
+        <script type="text/javascript" src="assets/plugins/flot/jquery.flot.js"></script>
+        <script type="text/javascript" src="assets/plugins/flot/jquery.flot.resize.js"></script>
+
+               <script type="text/javascript">
+                $(function() {
+            
+                    // We use an inline data source in the example, usually data would
+                    // be fetched from a server
+            
+				var data = [],
+                        totalPoints = 300;
+            
+                    function getRandomData() {
+            
+                        if (data.length > 0)
+                            data = data.slice(1);
+            
+                        // Do a random walk
+            
+                        while (data.length < totalPoints) {
+            
+                            var prev = data.length > 0 ? data[data.length - 1] : 50,
+                                y = prev + Math.random() * 10 - 5;
+            
+                            if (y < 0) {
+                                y = 0;
+                            } else if (y > 100) {
+                                y = 100;
+                            }
+            
+                            data.push(y);
+                        }
+            
+                        // Zip the generated y values with the x values
+            
+                        var res = [];
+                        for (var i = 0; i < data.length; ++i) {
+                            res.push([i, data[i]])
+                        }
+            
+                        return res;
+                    }
+            
+                    // Set up the control widget
+            
+                    var updateInterval = 30;
+                    $("#updateInterval").val(updateInterval).change(function () {
+                        var v = $(this).val();
+                        if (v && !isNaN(+v)) {
+                            updateInterval = +v;
+                            if (updateInterval < 1) {
+                                updateInterval = 1;
+                            } else if (updateInterval > 2000) {
+                                updateInterval = 2000;
+                            }
+                            $(this).val("" + updateInterval);
+                        }
+                    });
+            
+                    var plot = $.plot("#placeholder", [ getRandomData() ], {
+						grid: {
+                        borderWidth:0,
+                        markings: function(axes) {
+                            var markings = [];
+                            var xaxis = axes.xaxis;
+                            for (var x = Math.floor(xaxis.min); x < xaxis.max; x += xaxis.tickSize * 2) {
+                                markings.push({ xaxis: { from: x, to: x + xaxis.tickSize }, color: "#000" });
+                            }
+                            return markings;
+                        }
+                    },
+                    series: {
+                            shadowSize: 0,	// Drawing is faster without shadows
+							lines: {
+								// we don't put in show: false so we can see
+								// whether lines were actively disabled
+								lineWidth: 2, // in pixels
+								fill: true,
+								fillColor: "#ea7d7d",
+								steps: false
+								// Omit 'zero', so we can later default its value to
+								// match that of the 'fill' option.
+							},
+                        },
+                   
+					colors: ["#d84949"],
+					yaxis: {
+                            min: 0,
+                            max: 100
+                        },
+                    xaxis: {
+                            show: false,
+							
+                        },
+						
+                    });
+            
+                    function update() {
+            
+                        plot.setData([getRandomData()]);
+            
+                        // Since the axes don't change, we don't need to call plot.setupGrid()
+            
+                        plot.draw();
+                        setTimeout(update, updateInterval);
+                    }
+            
+                    update();
+            
+                });
+            
+		</script>
+</body>
+</html>
+
+	   
+
+</body>
+</html>

@@ -3,8 +3,18 @@ RewriteEngine On
 
 php_value max_file_uploads 40
 
-RewriteCond %{HTTP_HOST} ^www.facturamebel.ru$ [NC]
-RewriteRule ^(.*)$ http://facturamebel.ru/$1 [R=301,L]
+php_flag display_errors on
+
+
+AddType application/octet-stream .pdf
+
+#RewriteCond /static/$
+RedirectMatch 301 static/([a-z0-9\_\-]+)$ /$1
+#RewriteRule /$1 [R=301,L]
+
+
+RewriteCond %{HTTP_HOST} ^www.http://mebel-na-balkon.ru$ [NC]
+RewriteRule ^(.*)$ http://mebel-na-balkon.ru/$1 [R=301,L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule .* index.php [L]

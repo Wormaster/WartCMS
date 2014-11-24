@@ -1,0 +1,36 @@
+<!-- begin: menu.html.tmpl-->
+
+
+    <li>
+        <a {% if controller == "admin_index" %}class="active-title" {% endif %}href="/{{ lang }}/admin">
+            <span class="nav-icon"><i class="icon-dashboard icon-2x"></i></span>
+            <span class="sidebar-menu-item-text">Главная</span></a>
+    </li>
+    {% if userlevel == 'admin' %}
+    <li>
+        <a href="/{{ lang }}/admin/unicon">
+            <span class="nav-icon"><i class="icon-puzzle-piece icon-2x"></i></span>
+            <span class="sidebar-menu-item-text">Уникон</span>
+        </a>
+    <li>
+    {% endif %}
+    <li>
+        <a href="/{{ lang }}/admin/categories">
+            <span class="nav-icon"><i class="icon-bookmark icon-2x"></i></span>
+            <span class="sidebar-menu-item-text">Категории</span>
+        </a>
+    <li>
+        <a href="/{{ lang }}/admin/feedback">
+            <span class="nav-icon"><i class="icon-mobile-phone icon-2x"></i></span>
+            <span class="sidebar-menu-item-text">Обратная связь</span>
+        </a>
+    </li>
+    <li>
+        <a href="/{{ lang }}/admin/user">
+            <span class="nav-icon"><i class="icon-user icon-2x"></i></span>
+            <span class="sidebar-menu-item-text">Пользователи</span>
+        </a>
+    </li>
+
+
+<!-- end: menu.html.tmpl -->

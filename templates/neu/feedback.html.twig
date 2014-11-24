@@ -1,0 +1,182 @@
+{% extends 'base.html.twig' %}
+{% block leftmenu %}
+    {{ parent() }}
+
+    {% for type in alltypes %}
+        <li>
+            <a href="/{{ lang }}/admin/unimanager?ctype={{ type.id }}">
+                <span class="nav-icon"><i class="icon-puzzle-piece icon-2x"></i></span>
+                <span class="sidebar-menu-item-text">{{ type.name }}</span>
+            </a>
+        </li>
+    {% endfor %}
+
+
+{% endblock %}
+{% block crumbs %}
+    <!-- page content header -->
+    <div class="row add-padding">
+        <div class="pull-left">
+            <h1>Обратная связь</h1>
+            <ol class="breadcrumb">
+                <li><a href="/admin" class="text-transparent"><i class="icon-home"></i> Главная</a></li>
+                <li class="active"><a href="/admin/{{ controller }}">Просмотр сообщений пользователя</a></li>
+            </ol>
+        </div>
+    </div><!-- / page content header -->
+{% endblock %}
+
+{% block content %}
+    <div class="row padding-bottom">
+        <!--basic tabs-->
+        <div class="col-md-12 col-xs-12">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs">
+                <li><a href="#profile" data-toggle="tab">Заказы</a></li>
+                <li><a href="#messages" data-toggle="tab">Отзывы</a></li>
+                <li><a href="#basic" data-toggle="tab">Консультации</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content add-shadow">
+                <div class="tab-pane" id="profile">
+                    <h3>Заказы</h3>
+                    <div class="table-responsive">
+                        {% if orders %}
+                        <table id="tasks" class="table table-hover table-striped table-content">
+                            <thead>
+                            <tr>
+                                <th>Имя</th>
+                                <th>Почта</th>
+                                <th>Телефон</th>
+                                <th>Товар</th>
+                                <th>Действия</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for order in orders %}
+                                <tr>
+                                    <td>{{ order.value.name }}</td>
+
+                                    <td>
+                                        {{ order.value.email }}
+                                    </td>
+                                    <td>
+                                        {{ order.value.phone }}
+                                    </td>
+                                    <td>
+                                        <a href="/catalog/{{ order.product.category }}/{{ order.product.alias }}" target="_blank">{{ order.product.name }}</a>
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-default" href="/{{ lang }}/admin/{{ controller }}/delete?id={{ order.id }}"><i class="icon-remove"></i></a>
+
+                                    </td>
+                                </tr>
+                            {% endfor %}
+
+
+                            </tbody>
+                        </table>
+                        {% else %}
+                        <p>Пока нет ни одного заказа</p>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="tab-pane" id="messages">
+                    <h3>Отзывы</h3>
+                    <div class="table-responsive">
+                        {% if messages %}
+                            <table id="tasks" class="table table-hover table-striped table-content">
+                                <thead>
+                                <tr>
+                                    <th>Имя</th>
+                                    <th>Почта</th>
+                                    <th>Телефон</th>
+                                    <th>Начало сообщения</th>
+                                    <th>Действия</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for mess in messages %}
+                                    <tr>
+                                        <td>{{ mess.value.name }}</td>
+
+                                        <td>
+                                            {{ mess.value.email }}
+                                        </td>
+                                        <td>
+                                            {{ mess.value.phone }}
+                                        </td>
+                                        <td>
+                                            {{ mess.value.message | cut(60) }}
+                                        </td>
+                                        <td>
+                                            <a class="btn btn-default" href="/{{ lang }}/admin/{{ controller }}/delete?id={{ mess.id }}"><i class="icon-remove"></i></a>
+
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+
+
+                                </tbody>
+                            </table>
+                        {% else %}
+                            <p>Пока нет ни одного заказа</p>
+                        {% endif %}
+                    </div>
+                    <div class="btn-group">
+                        <button class="btn btn-danger" type="button">
+                            <i class="icon-remove"></i>
+                        </button>
+                        <button class="btn btn-danger btn-icon-trans" type="button">
+                            Очистить содержимое
+                        </button>
+                    </div>
+                </div>
+                <div class="tab-pane" id="basic">
+                    <h3>Вопросы</h3>
+                    <div class="table-responsive">
+                        {% if consults %}
+                            <table id="tasks" class="table table-hover table-striped table-content">
+                                <thead>
+                                <tr>
+                                    <th>Имя</th>
+                                    <th>Почта</th>
+                                    <th>Телефон</th>
+                                    <th>Начало сообщения</th>
+                                    <th>Действия</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for cons in consults %}
+                                    <tr>
+                                        <td>{{ cons.value.name }}</td>
+
+                                        <td>
+                                            {{ cons.value.email }}
+                                        </td>
+                                        <td>
+                                            {{ cons.value.phone }}
+                                        </td>
+                                        <td>
+                                            {{ cons.value.message | cut(60) }}
+                                        </td>
+                                        <td>
+                                            <a class="btn btn-default" href="/{{ lang }}/admin/{{ controller }}/delete?id={{ cons.id }}"><i class="icon-remove"></i></a>
+
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+
+
+                                </tbody>
+                            </table>
+                        {% else %}
+                            <p>Пока нет ни одного заказа</p>
+                        {% endif %}
+                    </div>                   </div>
+            </div><!-- / tabs -->
+        </div><!-- / col -->
+
+    </div>
+{% endblock %}
+

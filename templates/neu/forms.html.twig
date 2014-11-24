@@ -1,0 +1,89 @@
+{% macro form(item, userlevel) %}
+    {% if item.alias == 'text' %}
+        <label for="{{ item.field_alias }}">{{ item.field_name }}</label>
+        <input class="form-control" type="text" maxlength="{{ item.length }}" size="100" value="{{ item.value }}" id="{{ item.field_alias }}" name="{{ item.field_alias }}" {% if item.required == 1 %}required="" {% endif %}>
+    {% elseif item.alias == "longtext" %}
+        <label for="{{ item.field_alias }}">{{ item.field_name }}</label>
+        <textarea class="form-control" rows="5" cols="45" id="{{ item.field_alias }}" name="{{ item.field_alias }}" >{{ item.value }}</textarea>
+    {% elseif item.alias == "number" %}
+        <label for="{{ item.field_alias }}">{{ item.field_name }}</label>
+        <input class="form-control" type="text" maxlength="{{ item.length }}" size="100" value="{{ item.value }}" id="{{ item.field_alias }}" name="{{ item.field_alias }}" {% if item.required == 1 %}required="" {% endif %}>
+    {% elseif item.alias == "date" %}
+        <label for="{{ item.field_alias }}">{{ item.field_name }}</label>
+        <input class="form-control" type="text" maxlength="{{ item.length }}" size="100" value="{{ item.value }}" id="{{ item.field_alias }}" name="{{ item.field_alias }}" {% if item.required == 1 %}required="" {% endif %}>
+    {% elseif item.alias == "image" %}
+        <label>{{ item.field_name }}</label>
+        <div class="{{ item.field_alias }}_new">
+            <div class="aux-image">
+                <input type="file" name="{{ item.field_alias }}[]" class="img-field" {% if item.multiple == 1 %}multiple="" {% endif %}>
+            </div>
+        </div>
+        <div class="{{ item.field_alias }}-image">
+            <p>Загруженные изображения</p>
+            {% for image in item.values %}
+                <a class="cbox" href="/images/{{ item.folder }}/{{ image.image }}" rel="gal-{{ item.field_alias }}">
+                <img src="/images/{{ item.folder }}/thumbs/{{ image.thumb }}" alt="{{ item.field_name }}" width="200"/>
+                </a>
+                {% else %}
+                <p>Загруженых изображений пока нет.</p>
+                {% endfor %}
+        </div>
+        {% if item.values %}
+        <div class="delimgs">
+            <label for="{{ item.field_alias }}-delete">Удалить все изображения.</label>
+            <input type="checkbox" id="{{ item.field_alias }}-delete" name="{{ item.field_alias }}-delete"/>
+        </div>
+            {% endif %}
+        <hr/>
+    {% elseif item.alias == "assign" %}
+        <label for="{{ item.field_alias }}">{{ item.field_name }}</label>
+        <select size="{{ item.length }}" {% if item.multiple == 1%}multiple {% endif %}name="{{ item.field_alias }}[]">
+            <option disabled>Выберите вариант(ы)</option>
+            {% for value in item.values %}
+                {% if item.multiple %}
+                    <option {% if value.selected == true %}selected="" {% endif %}value="{{ value.id }}">{{ value.name }}</option>
+                    {% else %}
+                        <option {% if value.id == item.value %}selected="" {% endif %}value="{{ value.id }}">{{ value.name }}</option>
+                    {% endif %}
+                {% endfor %}
+        </select>
+    {% elseif item.alias == "catassign" %}
+        <label for="{{ item.field_alias }}">{{ item.field_name }}</label>
+        <select {% if userlevel != 'admin' %}disabled="" {% endif %}size="{{ item.length }}" {% if item.multiple == 1%}multiple {% endif %}name="{{ item.field_alias }}[]">
+            <option disabled>Выберите вариант(ы)</option>
+            {% for value in item.values %}
+                    <option {% if value.alias == item.value %}selected="" {% endif %}value="{{ value.id }}">{{ value.name }}</option>
+            {% endfor %}
+        </select>
+    {% elseif item.alias == "userlevel" %}
+        <label for="{{ item.field_alias }}">{{ item.field_name }}</label>
+        <select {% if userlevel != 'admin' %}disabled="" {% endif %}size="{{ item.length }}" {% if item.multiple == 1%}multiple {% endif %}name="{{ item.field_alias }}">
+            <option disabled>Выберите вариант(ы)</option>
+            {% for value in item.values %}
+                <option {% if value.alias == item.value %}selected="" {% endif %}value="{{ value.alias }}">{{ value.name }}</option>
+            {% endfor %}
+        </select>
+    {% elseif item.alias == "select" %}
+        <label for="{{ item.field_alias }}">{{ item.field_name }}</label>
+        <select size="{{ item.length }}" {% if item.multiple == 1 %}multiple {% endif %}name="{{ item.field_alias }}[]">
+            <option disabled>Выберите вариант(ы)</option>
+            {% for value in item.values %}
+                {% if item.multiple %}
+                    <option {% if value.selected == true %}selected="" {% endif %}value="{{ value.string }}">{{ value.string }}</option>
+                {% else %}
+                    <option {% if value.selected == true %}selected="" {% endif %}value="{{ value }}">{{ value }}</option>
+                {% endif %}
+            {% endfor %}
+        </select>
+    {% elseif item.alias == 'password' %}
+        <label for="{{ item.field_alias }}">{{ item.field_name }}</label>
+        <input class="form-control" type="password" maxlength="{{ item.length }}" size="100" value="" id="{{ item.field_alias }}" name="{{ item.field_alias }}" {% if item.required == true %}required="" {% endif %}>
+    {% elseif item.alias == 'status' %}
+        <label for="{{ item.field_alias }}">{{ item.field_name }}</label>
+        <input type="radio" name="{{ item.field_alias }}" value="0" {% if item.current == 0 %}checked="" {% endif %}/><span>Отключен</span>
+        <input type="radio" name="{{ item.field_alias }}" value="1" {% if item.current == 1 %}checked="" {% endif %}/><span>Включен</span>
+    {% else %}
+        <p>Неизвестный инпут</p>
+    {% endif %}
+
+{% endmacro %}

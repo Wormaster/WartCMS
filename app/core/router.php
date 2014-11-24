@@ -1,123 +1,175 @@
-<?php 
+<?php
+namespace Core;
 class Router {
-	static function start()
-	{
-        global $lang;
-        $lang = 'ru';
-		$controller_name = 'Main';
-		$action_name = 'index';
-		$controllers = glob(app_patch . 'controllers' . DS . 'controller_*.php');
-		
-		//$routes = explode('/', $_SERVER['REQUEST_URI']);
-   		$routes = preg_split ( '/[\/\?\&]+/',  $_SERVER['REQUEST_URI']);
-		//var_dump ($routes);
-		// получаем имя контроллера
-        if (!empty($routes[1])) {
-            if ($routes[1] == 'en') {
-                $lang = 'en';
-            }
-            else $lang = 'ru';
+    private $routes;
+
+    function __construct() {
+        $this->reg = Registry::instance();
+        $this->routes = $this->reg['routes'];
+
+        //Debug
+        if ($this->reg['debug']) {
+            $this->firephp = \FirePHP::getInstance(true);
         }
-		if ( !empty($routes[2]) )
-		{	
-			if ($routes[2] == 'furniture') {
-				if ($routes[3] != 'show') {
-					$_REQUEST['id'] = $routes['3'];
-					$routes[3] = 'show';
-					}
-				}
-			elseif ($routes[2] == 'articles')
-			{
-				$_REQUEST['id'] = $routes['3'];
-				$routes[3] = 'show';
-				}
-			$controller_name = $routes[2];
-		}
-		
-		// получаем имя экшена
-		if ( !empty($routes[3]) )
-		{
-			$action_name = $routes[3];
-		}
-			
+    }
 
-		// добавляем префиксы
-		$model_name = 'Model_'.$controller_name;
-		$controller_name = 'Controller_'.$controller_name;
-		$action_name = 'action_'.$action_name;
-		/*
-		echo "Model: $model_name <br>";
-		echo "Controller: $controller_name <br>";
-		echo "Action: $action_name <br>";
-		*/
+    function getURI(){
+        if(!empty($_SERVER['REQUEST_URI'])) {
+            return trim($_SERVER['REQUEST_URI'], '/');
+        }
 
-		// подцепляем файл с классом модели (файла модели может и не быть)
+        if(!empty($_SERVER['PATH_INFO'])) {
+            return trim($_SERVER['PATH_INFO'], '/');
+        }
 
-		$model_file = strtolower($model_name).'.php';
-		$model_path = app_patch . 'models' . DS .$model_file;
-		if(file_exists($model_path))
-		{
-			include app_patch . 'models' . DS .$model_file;
-		}
+        if(!empty($_SERVER['QUERY_STRING'])) {
+            return trim($_SERVER['QUERY_STRING'], '/');
+        }
+        return false;
+    }
 
-		// подцепляем файл с классом контроллера
-		$controller_file = strtolower($controller_name).'.php';
-		$controller_path = app_patch . 'controllers' . DS .$controller_file;
-		if(file_exists($controller_path))
-		{
-			include app_patch . 'controllers' . DS .$controller_file;
-			$controller = new $controller_name;
-			$action = $action_name;
-		}
-		else
-		{
-			/*
-			правильно было бы кинуть здесь исключение,
-			но для упрощения сразу сделаем редирект на страницу 404
-			*/
-			Router::ErrorPage404();
-		}
-		
-		// создаем контроллер
-		 
-		if(method_exists($controller, $action))
-		{
-			// вызываем действие контроллера
-			$controller->$action();
-		}
-		else
-		{
-			// здесь также разумнее было бы кинуть исключение
-			Router::ErrorPage404();
-		}
-	
-	}
+	function start()
+	{
+        //для совместимости с многоязычность от старых версий
+        global $lang;
 
-	function ErrorPage404()
+
+        $uri = $this->getURI();
+        if ($this->reg['debug']) {
+            $this->firephp->log($uri, 'URI');
+        }
+        foreach($this->routes as $pattern => $route){
+            // Если правило совпало.
+
+            if(preg_match("~$pattern~", $uri)){
+                // Получаем внутренний путь из внешнего согласно правилу.
+                $internalRoute = preg_replace("~$pattern~", $route, $uri);
+                // Разбиваем внутренний путь на сегменты.
+                $segments = explode('/', $internalRoute);
+                // Первый сегмент — язык.
+                if ($this->reg['debug']) {
+                $this->firephp->log($segments, 'Segments');
+                $this->firephp->log($internalRoute);
+                }
+                $lang = array_shift($segments);
+                if ($lang == ''){
+                    $lang = 'ru';
+                }
+                $this->reg['language'] = $lang;
+
+                // Второй сегмент - контроллер
+                if ($segments[0] == 'admin') {
+                    $place = array_shift($segments);
+                    $place = ucwords($place);
+                }
+                else {
+                    $place = 'Front';
+                }
+                $controller_name = array_shift($segments);
+                $model = '\\'.$place . '\\' . 'Models' . '\\' . 'Model_'.ucfirst($controller_name);
+                $controller_shortname = $controller_name;
+                $controller_name = '\\'.$place . '\\' . 'Controllers' . '\\' . 'Controller_'.ucfirst($controller_name);
+                // Второй — действие.
+                $action_shortname = array_shift($segments);
+                $action = 'action_'.$action_shortname;
+                // Остальные сегменты — параметры.
+                $parameters = $segments;
+
+                //Положим всю инфу в реестр для дальнейшей нафигации
+                $this->reg['route'] = array('controller' => $controller_shortname, 'model' => $model, 'action' => $action_shortname, 'params' => $parameters);
+                //Говнокостыль для совместимости
+                /*if (!$_REQUEST['id']) {
+                $_REQUEST['id'] = $parameters[0];
+                }*/
+
+
+                if ($this->reg['debug']){
+                    $profiler = \Generic\Profiler::instance();
+                    $profiler->start_count();
+                }
+
+
+
+                //Debug роутера
+                if ($this->reg['debug']) {
+                    $this->firephp->log($place, 'Place');
+                    $this->firephp->log($controller_name, 'Controller');
+                    $this->firephp->log($model, 'Model');
+                    $this->firephp->log($action, 'Action');
+                    $this->firephp->log($parameters, 'Parameters');
+                    $autoload = spl_autoload_functions();
+                    $this->firephp->log($autoload, 'Autoload');
+                }
+
+                if (($this->reg['online'] != true) && ($place != 'admin')){
+                    session_start();
+                    if ($_SESSION['admin']){
+
+                    }
+                    else {
+                        self::Offline();
+                        die;
+                    }
+
+                }
+                elseif($place == 'admin'){
+
+                }
+
+
+                $controller = new $controller_name;
+                if(method_exists($controller, $action))
+                {
+                    // вызываем действие контроллера
+                    $controller->$action($parameters);
+                    return;
+                }
+                else
+                {
+                    // здесь также разумнее было бы кинуть исключение
+                    self::ErrorPage404();
+                    return;
+                }
+                break;
+            }
+
+        }
+        self::ErrorPage404();
+        return;
+    }
+
+	static function ErrorPage404()
 	{
         $host = 'http://'.$_SERVER['HTTP_HOST'].'/';
         header('HTTP/1.1 404 Not Found');
 		header("Status: 404 Not Found");
 		//header('Location:'.$host.'404');
-		$controller_file = 'controller_404.php';
-		$controller_path = app_patch . 'controllers' . DS .$controller_file;
-		require_once app_patch . 'controllers' . DS .$controller_file;
-		$controller_name = 'Controller_404';
+		$controller_file = 'Controller_404.php';
+		$controller_name = '\Front\Controllers\Controller_404';
 		$controller = new $controller_name;
 		$action = 'action_index';
 		$controller->$action();
 		//exit('К сожалению данная страница не доступна...');
     }
-	function NoDb()
+	static function NoDb($error = null)
 	{
-		$controller_file = 'controller_404.php';
-		$controller_path = app_patch . 'controllers' . DS .$controller_file;
-		require_once app_patch . 'controllers' . DS .$controller_file;
-		$controller_name = 'Controller_404';
+        $controller_file = 'Controller_404.php';
+        $controller_name = '\Front\Controllers\Controller_404';
 		$controller = new $controller_name;
-		$action = 'action_index';
-		$controller->$action();
+		$action = 'action_nodb';
+		$controller->$action($error);
 		//exit('К сожалению данная страница не доступна...');
+    }
+    static function Offline()
+    {
+        $controller_file = 'controller_404.php';
+        $controller_path = app_patch . 'controllers' . DS .$controller_file;
+        require_once app_patch . 'controllers' . DS .$controller_file;
+        $controller_name = 'Controller_404';
+        $controller = new $controller_name;
+        $action = 'action_offline';
+        $controller->$action('К сожалению сайт на данный момент отключен');
+        //exit('К сожалению данная страница не доступна...');
     }
     
 }

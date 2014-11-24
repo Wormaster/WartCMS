@@ -1,0 +1,60 @@
+.chart {
+  position: relative;
+  display: inline-block;
+  width: 110px;
+  height: 110px;
+  margin-top:0px;
+  margin-bottom: 50px;
+  text-align: center;
+  left:-5%;  font-size:2em!important;
+}
+
+
+.chart canvas {
+  position: absolute;
+  top: 0;
+  left:0;
+}
+.percent {
+  display: inline-block;
+  line-height: 110px;
+  z-index: 2;
+}
+.percent:after {
+  content: '%';
+  margin-left: 0.1em;
+  font-size: 1em;
+}
+.angular {
+  margin-top:0px;
+}
+.angular .chart {
+  margin-top: 0;
+}
+input {
+  display: block;
+  margin: auto;
+  margin-bottom: 3em;
+}
+
+.chart-small {
+  position: relative;
+  display: inline-block;
+  width: 55px;
+  height: 55px;
+  margin-top:22px;
+  
+  margin-right:0px;
+  text-align: center;
+  font-size:1em!important;
+}
+
+	@media (max-width:1180px) {
+		.chart-small {margin-bottom:30px!important;}
+	}
+
+.chart-small  canvas {
+  position: absolute;
+  top: 0;
+  left:0;
+}

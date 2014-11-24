@@ -1,0 +1,107 @@
+
+/*
+ * Off Canvas Sidebar
+ * --------------------------------------------------
+ */
+@media screen and (max-width: 768px) {
+  .row-offcanvas {
+    position: relative;
+
+  }
+
+  .row-offcanvas-right
+  .sidebar-offcanvas {
+    right: -40%;  
+  }
+
+  .row-offcanvas-left
+  .sidebar-offcanvas {
+    left: -40%;  
+	
+  }
+
+  .row-offcanvas-right.active {
+    right: 30%;  
+  }
+
+  .row-offcanvas-left.active {
+    left: 40%;  
+
+  }
+
+  .sidebar-offcanvas {
+    position: absolute;
+    top: 0;
+    width: 50%; 
+
+  }
+
+}
+
+@media screen and (min-width: 480px) and (max-width: 780px){
+  .row-offcanvas {
+    position: relative;
+  }
+
+  .row-offcanvas-right
+  .sidebar-offcanvas {
+    right: -30%;  
+  }
+
+  .row-offcanvas-left
+  .sidebar-offcanvas {
+    left: -30%;  
+	
+  }
+
+  .row-offcanvas-right.active {
+    right: 30%;  
+  }
+
+  .row-offcanvas-left.active {
+    left: 30%;  
+
+  }
+
+  .sidebar-offcanvas {
+    position: absolute;
+    top: 0;
+    width:30%; 
+
+  }
+
+}
+
+@media screen and (max-width: 480px) {
+  .row-offcanvas {
+    position: relative;
+  }
+
+  .row-offcanvas-right
+  .sidebar-offcanvas {
+    right: -50%;  
+  }
+
+  .row-offcanvas-left
+  .sidebar-offcanvas {
+    left: -50%;  
+	
+  }
+
+  .row-offcanvas-right.active {
+    right: 50%;  
+  }
+
+  .row-offcanvas-left.active {
+    left: 50%;  
+
+  }
+
+  .sidebar-offcanvas {
+    position: absolute;
+    top: 0;
+    width:50%; 
+
+  }
+
+}

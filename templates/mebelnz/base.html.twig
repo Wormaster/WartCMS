@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+    {% block head %}
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=1024">
+    {% block title %}
+    <title>{{ title }} - {{ sitename }}</title>
+    {% endblock %}
+    <meta name="description" content="{{ description }}">
+    <meta name="keywords" content="{{ keywords }}">
+    <link rel="stylesheet" href="/templates/{{ templatefolder }}/css/fancybox.css">
+    <link rel="stylesheet" href="/templates/{{ templatefolder }}/css/styles.css">
+    <link href='http://fonts.googleapis.com/css?family=Cuprum:400,400italic,700,700italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    <!--[if IE]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    {% endblock %}
+</head>
+<body>
+<!-- Шапка -->
+{% import 'menu.html.twig' as menugen %}
+<header>
+    <!-- Верхнее меню -->
+    <div class="menu">
+        <div class="cont">
+            <ul>
+                <li><a {% if mainpage %}class="active" {% endif %}href="/">Главная</a></li>
+                {% block mainmenu %}
+                    {% for menuitem in menu %}
+                        {{ menugen.menu(menuitem) }}
+                    {% endfor %}
+                {% endblock %}
+            </ul>
+        </div>
+    </div>
+    <!-- End Верхнее меню -->
+</header>
+<!-- End Шапка -->
+{% set phone = '8 (495) 642 11 15' %}
+<!-- Верхний блок -->
+<div class="top_block">
+    <div class="cont">
+        <div class="shop_info left">
+            <p class="name">Интернет магазин</p>
+            <a href="/"><img class="logo" src="/templates/{{ templatefolder }}/images/logo.png" alt=""></a>
+            <p class="slogan">Мебель на балкон по индивидуальным размерам</p>
+        </div>
+         {% block headimage %}
+        <div class="slider right">
+            <div class="sliderContent">
+                <div class="item">
+                    <img src="/templates/{{ templatefolder }}/images/slide_img.jpg" alt="">
+                    <a href="/" class="slide_link">Скидки на различные цвета!</a>
+                </div>
+                <div class="item">
+                    <img src="/templates/{{ templatefolder }}/images/slide_img.jpg" alt="">
+                    <a href="/" class="slide_link">Скидки на различные цвета!</a>
+                </div>
+                <div class="item">
+                    <img src="/templates/{{ templatefolder }}/images/slide_img.jpg" alt="">
+                    <a href="/" class="slide_link">Скидки на различные цвета!</a>
+                </div>
+                <div class="item">
+                    <img src="/templates/{{ templatefolder }}/images/slide_img.jpg" alt="">
+                    <a href="/" class="slide_link">Скидки на различные цвета!</a>
+                </div>
+            </div>
+        </div>
+        {% endblock %}
+        <div class="clear"></div>
+    </div>
+</div>
+<!-- End Верхний блок -->
+
+<div class="cont">
+    <!-- Основная часть -->
+    <section class="right {% block sectionclass %}{% endblock %}">
+        {% block crumbs %}
+
+        {% endblock %}
+        {% block content %}
+
+        {% endblock %}
+    </section>
+    <!-- End Основная часть -->
+
+    <!-- Боковая колонка -->
+    <aside class="left">
+        {% block catalog %}
+        <div class="block">
+            <div class="block_title">Каталог</div>
+            <ul class="categories">
+                {% block categories %}
+                    {% for cat in categories %}
+                        <li><a href="/catalog/{{ cat.alias }}">{{ cat.name }}</a></li>
+                    {% endfor %}
+                {% endblock %}
+            </ul>
+        </div>
+        {% endblock %}
+        {% block articles %}
+            <div class="block">
+                <div class="block_title">Статьи</div>
+                <div class="articles">
+                    {% for st in stati | slice(0,2)%}
+                        <div class="article">
+                            <a href="/articles/{{ st.alias }}">
+                                <img src="/images/{{ st.imagefolder }}/{{ st.article_image.0.image }}" alt="{{ st.name }}">
+                                <p class="name">{{ st.name }}</p>
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
+                <a href="/articles" class="all_link">Все статьи</a>
+            </div>
+        {% endblock %}
+        {% block reviews %}
+        <div class="block">
+            <div class="block_title">Отзывы</div>
+
+            <div class="reviews">
+
+                {% for ref in references | slice(0,2)%}
+                    <div class="review">
+                        <img class="review_foto left" src="/images/{{ ref.imagefolder }}/{{ ref.clientphoto.0.image }}" alt="{{ ref.name }}">
+                        <div class="right review_text">
+                            <p>{{ ref.otziv | cut(110) | raw }}</p>
+                            <a href="/references/{{ ref.alias }}" class="details right">Читать дальше</a>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                {% endfor %}
+
+            </div>
+            <a href="/references" class="all_link">Все отзывы</a>
+        </div>
+        {% endblock %}
+
+    </aside>
+    <!-- End Боковая колонка -->
+    <div class="clear"></div>
+</div>
+
+<!-- Подвал -->
+{% block footer %}
+<footer>
+    <div class="cont">
+        <div class="contacts left">
+            <div class="title">Контакты:</div>
+            <p>Варшавское шоссе 1 стр. 2</p>
+            <p>{{ phone }}</p>
+            <p><a href="mailto:info@mebel-na-balkon.ru">info@mebel-na-balkon.ru</a></p>
+        </div>
+
+        <div class="links left">
+            <div class="left">
+                <div class="title">Каталог:</div>
+                {% block bottomcat %}
+                <ul>
+                        {% for cat in categories %}
+                            <li><a href="/catalog/{{ cat.alias }}">{{ cat.name }}</a></li>
+                        {% endfor %}
+                </ul>
+                {% endblock %}
+            </div>
+
+            <div class="left">
+                <div class="title">Информация</div>
+                <ul>
+                    {% for secondary in menu %}
+                        {{ menugen.menu(secondary) }}
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+        <div class="disclaimer">
+            <p>Использование материалов сайта без письменного разрешения владельца сайта запрещено.</p>
+            <p>Информация представленная на сайте носит рекламный характер. Финальный вид изделий может отличаться от представленного на сайте.</p>
+        </div>
+    </div>
+</footer>
+    <div class="counter">
+        <!--LiveInternet counter--><script type="text/javascript"><!--
+            document.write("<a href='//www.liveinternet.ru/click' "+
+                    "target=_blank><img src='//counter.yadro.ru/hit?t44.6;r"+
+                    escape(document.referrer)+((typeof(screen)=="undefined")?"":
+                    ";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+                            screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+                    ";"+Math.random()+
+                    "' alt='' title='LiveInternet' "+
+                    "border='0' width='31' height='31'><\/a>")
+            //--></script><!--/LiveInternet-->
+    </div>
+
+<!-- End Подвал -->
+{% endblock %}
+{% block modals %}
+    <a class="help_link fancy" href="#question_form"></a>
+    <div class="modal" id="question_form">
+        <div class="modal_title">
+            <p>У Вас есть вопрос?</p>
+            <p class="desc">Заполните форму ниже и наши<br> специалисты с радостью ответят!</p>
+        </div>
+
+        <div class="content">
+            <form class="form" method="post" action="">
+                <input type="hidden" name="formtype" value="message"/>
+                <div class="line">
+                    <input class="input" type="text" name="name" value="" placeholder="Ваше имя" required="">
+                </div>
+                <div class="line">
+                    <input class="input" type="email" name="email" value="" placeholder="Ваша почта" required="" >
+                </div>
+                <div class="line">
+                    <input class="input" type="tel" name="phone" value="" placeholder="Ваш телефон 88001234567" required="" pattern="\d{11}">
+                </div>
+                <div class="line">
+                    <textarea name="message" placeholder="Ваш вопрос"></textarea>
+                </div>
+                <div class="submit">
+                    <input class="submit_btn" type="submit" name="submit" value="Отправить">
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+<script src="/templates/{{ templatefolder }}/js/jquery.js"></script>
+<script src="/templates/{{ templatefolder }}/js/jquery-migrate.js"></script>
+<script src="/templates/{{ templatefolder }}/js/mobilyslider.js"></script>
+<script src="/templates/{{ templatefolder }}/js/fancybox.js"></script>
+<script src="/templates/{{ templatefolder }}/js/scripts.js"></script>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-56350538-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+{% endblock %}
+</body>
+</html>

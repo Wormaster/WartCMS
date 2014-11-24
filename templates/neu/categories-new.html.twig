@@ -1,0 +1,76 @@
+{% extends 'base.html.twig' %}
+{% block leftmenu %}
+    {{ parent() }}
+
+    {% for type in alltypes %}
+        <li>
+            <a href="/{{ lang }}/admin/unimanager?ctype={{ type.id }}">
+                <span class="nav-icon"><i class="icon-puzzle-piece icon-2x"></i></span>
+                <span class="sidebar-menu-item-text">{{ type.name }}</span>
+            </a>
+        </li>
+    {% endfor %}
+
+
+{% endblock %}
+{% block crumbs %}
+    <!-- page content header -->
+    <div class="row add-padding">
+        <div class="pull-left">
+            <h1>Текстовые материалы</h1>
+            <ol class="breadcrumb">
+                <li><a href="/admin" class="text-transparent"><i class="icon-home"></i> Главная</a></li>
+                <li><a href="/admin/{{ controller }}">Категории</a></li>
+                <li class="active"><a href="/admin/{{ controller }}/{% if item.id != '' %}edit?id={{ item.id }}{% else %}new{% endif %}">Редактирование категории</a></li>
+            </ol>
+        </div>
+    </div><!-- / page content header -->
+{% endblock %}
+
+{% block content %}
+    {% import "forms.html.twig" as generator %}
+    <div class="row">
+        <div class="col-lg-6 col-md-offset-1">
+            <form enctype="multipart/form-data" action="/ru/admin/{{ controller }}/{% if item.id != '' %}save{% else %}new{% endif %}" method="post" name="form1" id="form1" class="form-horizontal" role="form">
+                {% if item.id %}
+                <input type="hidden" name="id" value="{{ item.id }}"/>
+                {% endif %}
+
+                {% for field in fields %}
+                    <div class="form-group">
+                        {{ generator.form(field, userlevel) }}
+                    </div>
+                {% endfor %}
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input class="btn btn-primary btn-lg" type="submit" value="{% if item.id != '' %}Сохранить{% else %}Создать{% endif %}" id="submit" name="confirm">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <a class="btn btn-secondary right" href="/{{ lang }}/admin/{{ controller }}"><i class="ui-icon-cancel"></i> Отмена </a>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block script %}
+    <script>
+        $(window).load(function(){
+            tinymce.init({
+                selector: "textarea",
+                plugins: "code visualblocks link image jbimages",
+                toolbar: 'undo redo | bold italic  underline strikethrough outdent indent cut copy paste selectall | removeformat blockquote bullist alignleft aligncenter alignright alignjustify | code | visualblocks link image jbimages',
+                menu : 'newdocument undo redo visualaid cut copy paste selectall bold italic underline strikethrough subscript superscript removeformat formats',
+                height : 300,
+                relative_urls: false
+            });
+            $('.form-group a.cbox').colorbox();
+        });
+    </script>
+{% endblock %}
