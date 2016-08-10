@@ -1,3 +1,5 @@
+Student Project, stay here just for history
+
 WartCMS
 =======
 Simple Framework now in very-very early beta.
